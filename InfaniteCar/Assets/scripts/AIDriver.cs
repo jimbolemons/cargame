@@ -419,6 +419,19 @@ public class AIDriver : MonoBehaviour
             PlayerController.instance.HitOtherCar();
             TileMover.instance.PlayerHitCar();
         }
+        if (col.gameObject.tag == "Bullet")
+        {
+            isdead = true;
+            if (!police)
+                GameManager.instance.AICars.RemoveDriver(this, "collision");
+
+            Debug.Log("boom" + col.gameObject.name);
+            //mark the enemy as dead
+        }
+        else if (col.gameObject.tag != "Bullet") //if the bullet hits somthing that is not an enemy it will do this
+        {
+            Debug.Log("fuck" + col.gameObject.tag);
+        }
     }
 
 }

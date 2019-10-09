@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EventManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class EventManager : MonoBehaviour
     public static event GameEventAction OnPlayerDied;
 
     public static event GameEventAction OnGameReset;
+
+    public static event GameEventAction OnBackToMenu;
 
     public static event GameEventAction OnResumeAftervideo;
 
@@ -41,6 +44,17 @@ public class EventManager : MonoBehaviour
             OnGameReset();
         /*
           */
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
+        if (OnBackToMenu != null)
+            OnBackToMenu();
+
+        
+        /*
+          */
+
     }
 
 
