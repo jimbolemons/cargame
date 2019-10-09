@@ -26,7 +26,10 @@ public class UIEventManager : MonoBehaviour
         deathPanel.GetComponent<DeathPanelManager>().SetScore(GameManager.instance.GetCoinsCollected());
     }
     void OnGameStart(){
+        if(startPanel != null)
     	startPanel.SetActive(false);
+        if (Time.timeScale < 1)
+            Time.timeScale = 1;
     }
     void OnGameReset(){
     	startPanel.SetActive(true);

@@ -27,6 +27,8 @@ public class PausePanal : MonoBehaviour
         else
             Time.timeScale = 1;
 
+        
+
 
 
     }

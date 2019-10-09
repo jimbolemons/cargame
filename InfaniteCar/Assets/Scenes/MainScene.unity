@@ -2138,7 +2138,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 532896858}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410623914}
+        m_MethodName: BackToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &532896858
@@ -5942,7 +5953,6 @@ GameObject:
   - component: {fileID: 1136172349}
   - component: {fileID: 1136172344}
   - component: {fileID: 1136172348}
-  - component: {fileID: 1136172351}
   - component: {fileID: 1136172347}
   m_Layer: 13
   m_Name: CarObject
@@ -6103,21 +6113,6 @@ MonoBehaviour:
   DistanceGauge: {fileID: 444013354}
   PointsCollected: 0
   DebugInvinsable: 0
---- !u!114 &1136172351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136172341}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6cc13358e5f6c448b2b2c1ab16d3fe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cMovement: {fileID: 1136172342}
-  SkidmarkPrefab: {fileID: 1577084476027050181, guid: d187b8bce19f87448964ea63899eae1b,
-    type: 3}
 --- !u!1 &1162036292
 GameObject:
   m_ObjectHideFlags: 0
@@ -7707,7 +7702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1672344455
 RectTransform:
   m_ObjectHideFlags: 0
