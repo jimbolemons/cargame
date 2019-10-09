@@ -1,0 +1,1 @@
+{"Cars":[true,true,false,false,true,false,false],"Coins":9273,"Distance":[1897.9044189453125,0.0,0.0]}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d76b64dda79234c8a5acd7878af9cf, type: 3}
+  m_Name: gti
+  m_EditorClassIdentifier: 
+  CarType: gti
+  Speed: 0.26
+  Grip: 3.24
+  Acceleration: 0.029
+  MeshObject: {fileID: 2889166326748645013, guid: d864a940e96edb141b74282a2704c383,
+    type: 3}
+  CarPrice: 400
