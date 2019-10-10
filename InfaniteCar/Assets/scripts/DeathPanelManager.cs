@@ -13,10 +13,22 @@ public class DeathPanelManager : MonoBehaviour
     // 	GM = GameManager.instance;
     //     EventManager.OnPlayerDied += OnPlayerDied;
     // }
+    bool active = false;
+    private void Start()
+    {
+        EventManager.OnPlayerDied += OnPlayerDied;
+    }
+    
 
     
    public void SetScore(int score){
         //Debug.Log("Player died on death panel");
     	CoinsText.text = score.ToString("00");
     }
+    void OnPlayerDied()
+    {
+       
+
+    }
+    
 }
