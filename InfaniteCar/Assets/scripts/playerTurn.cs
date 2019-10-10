@@ -39,14 +39,15 @@ public class playerTurn : MonoBehaviour
             Debug.Log("turn left");
             transform.Rotate(xAngle, -yAngle, zAngle, Space.Self);
             angleOfCar = Mathf.Clamp(angleOfCar, -30, 30);
-
+            // TODO longer held down more it turn 
             // turn car to the left
         }
-        
+
 
         if (input.Right())
         {
             Debug.Log("turn right");
+            // TODO longer held down more it turn 
             transform.Rotate(xAngle, yAngle, zAngle, Space.Self);
             angleOfCar = Mathf.Clamp(angleOfCar, -30, 30);
             // turn car to right

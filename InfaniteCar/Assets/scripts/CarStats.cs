@@ -101,7 +101,7 @@ public class CarStats : MonoBehaviour
     }
     public void PlayerDiedFromGas()
     {
-        Debug.Log("<color=red>Player died from damage </color>");
+        Debug.Log("<color=red>Player died from gas </color>");
         //PC.PlayerDied();
         GM.SetCoinsCollected(PointsCollected);
         EventManager.instance.PlayerDied();
