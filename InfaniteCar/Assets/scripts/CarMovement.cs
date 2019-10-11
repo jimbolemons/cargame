@@ -9,8 +9,13 @@ public class CarMovement : MonoBehaviour
 	float movement = .25f;
 	float width = 15;
 
-    float rotateSpeed = 1.5f;
-    float baseRotationSpeed= 1.5f;
+    //float rotateSpeed = .1f;
+    float rotateSpeedR= .1f;
+    float rotateSpeedL= .1f;
+    float rotateSpeedR2 = .1f;
+    float rotateSpeedL2 = .1f;
+
+    float baseRotationSpeed = .1f;
 
     float IncreaseScale = 2.5f;
     // //Tilting
@@ -48,23 +53,94 @@ public class CarMovement : MonoBehaviour
        // HandleTilting();
     }
     void HandleRotation(){
-
+/*
         if(input.Left()){
-            rotateSpeed += Time.fixedDeltaTime*CarData.Grip /15f;
-            this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0,rotateSpeed,0) , 1);
-            Skid();
+            rotateSpeedL = rotateSpeedL2;
+            rotateSpeedL2 += Time.fixedDeltaTime*CarData.Grip ;
+            rotateSpeedL += rotateSpeedL2;
+            this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0,rotateSpeedL,0) , 1);
+          
+           // Skid();
         }else if (input.Right() ){
-            rotateSpeed += Time.fixedDeltaTime*CarData.Grip/15f;
+            rotateSpeedR = rotateSpeedR2;
+            rotateSpeedR2 += Time.fixedDeltaTime * CarData.Grip ;
+            rotateSpeedR += rotateSpeedR2;
 
-            this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles + new Vector3(0,rotateSpeed,0) , 1);
-            Skid();
-
-        }else if(rotateSpeed> baseRotationSpeed){
-            rotateSpeed-= Time.fixedDeltaTime*CarData.Grip*4f;
+            this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles + new Vector3(0,rotateSpeedR,0) , 1);
             //Skid();
-        }else{
+
+        }else if(rotateSpeedL2 && rotateSpeedR2 > baseRotationSpeed){
+            //rotateSpeed-= Time.fixedDeltaTime*CarData.Grip*4f;
+
+            rotateSpeedR = rotateSpeedR2;
+            rotateSpeedL = rotateSpeedL2;
+            rotateSpeedL2 -= Time.fixedDeltaTime * CarData.Grip /15f;
+            rotateSpeedR2 -= Time.fixedDeltaTime * CarData.Grip / 15f;
+            rotateSpeedR += rotateSpeedR2;           
+            rotateSpeedL += rotateSpeedL2;
+            // rotateSpeed2 = baseRotationSpeed;
+            //Skid();
+        }
+        else{
             StopSkid();
         }
+        */
+
+        if (input.Left() && input.Right() == false)
+        {
+            rotateSpeedL = rotateSpeedL2;
+            rotateSpeedL2 += Time.fixedDeltaTime * CarData.Grip;
+            rotateSpeedL += rotateSpeedL2;
+            this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, rotateSpeedL, 0), 1);
+
+            // Skid();
+
+        }
+        else if(rotateSpeedL2 > baseRotationSpeed)
+        {
+            rotateSpeedL = rotateSpeedL2;
+            rotateSpeedL2 -= Time.fixedDeltaTime * CarData.Grip *4f;
+            rotateSpeedL += rotateSpeedL2;
+        }
+
+        if (input.Right() && input.Left() == false)
+        {
+            rotateSpeedR = rotateSpeedR2;
+            rotateSpeedR2 += Time.fixedDeltaTime * CarData.Grip;
+            rotateSpeedR += rotateSpeedR2;
+
+            this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles + new Vector3(0, rotateSpeedR, 0), 1);
+            //Skid();
+
+        }
+        else if (rotateSpeedR2 > baseRotationSpeed)
+        {
+            rotateSpeedR = rotateSpeedR2;
+            rotateSpeedR2 -= Time.fixedDeltaTime * CarData.Grip * 4f;
+            rotateSpeedR += rotateSpeedR2;
+
+        }
+        /*
+        if (input.Right() && input.Left())
+
+        {
+            rotateSpeedR = rotateSpeedR2;
+            rotateSpeedR2 -= Time.fixedDeltaTime * CarData.Grip * 4f;
+            rotateSpeedR += rotateSpeedR2;
+
+
+            rotateSpeedL = rotateSpeedL2;
+            rotateSpeedL2 -= Time.fixedDeltaTime * CarData.Grip * 4f;
+            rotateSpeedL += rotateSpeedL2;
+
+
+        }
+        */
+
+
+
+
+
 
     }
     bool skidding = true;
