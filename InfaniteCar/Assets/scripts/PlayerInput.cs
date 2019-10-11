@@ -92,8 +92,9 @@ public class PlayerInput : MonoBehaviour
        #if UNITY_EDITOR
         UpdateKeys();
         #endif
-       UpdateTouch();
+      // UpdateTouch();
     }
+    /*
      void UpdateTouch(){
          left =false;
         right= false;
@@ -131,7 +132,7 @@ public class PlayerInput : MonoBehaviour
 
            }
          }
-     }
+     }*/
     void UpdateKeys(){
 
         up = Input.GetKey(KeyCode.W);
