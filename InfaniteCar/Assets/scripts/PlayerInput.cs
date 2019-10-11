@@ -86,53 +86,18 @@ public class PlayerInput : MonoBehaviour
         actionRelease = true;
     }
 
-    //public bool DebugKeys = false;
+    public bool DebugKeys = false;
     void FixedUpdate()
     {   
-       #if UNITY_EDITOR
+      if (DebugKeys)
         UpdateKeys();
-        #endif
-      // UpdateTouch();
+      else if(!DebugKeys)
+       UpdateTouch();
     }
-    /*
+    
      void UpdateTouch(){
-         left =false;
-        right= false;
-        down = false;
-
-
-        
-         down = left&& right;
-         if(Input.touchCount ==1 ){
-           Touch touch = Input.GetTouch(0);
-            if(EventSystem.current.IsPointerOverGameObject(touch.fingerId))return;
-
-            float pos = touch.position.x;
-            if(pos > Screen.width/2f){
-                 right = true;
-             }else {
-                left = true;
-             }
-         }else if(Input.touchCount >1){
-             Touch touchA = Input.GetTouch(0);
-             Touch touchB = Input.GetTouch(1);
-            if(EventSystem.current.IsPointerOverGameObject(touchA.fingerId))return;
-            if(EventSystem.current.IsPointerOverGameObject(touchB.fingerId))return;
-
-           float posA = touchA.position.x;
-             float posB = touchB.position.x;
-            if((posA > Screen.width/2f && posB < Screen.width/2f ) ||   (posA < Screen.width/2f && posB > Screen.width/2f )){
-                 down = true;
-             }else if(posA > Screen.width/2f && posB > Screen.width/2f){
        
-                right = true;
-
-             }else if(posA < Screen.width/2f && posB < Screen.width/2f){
-                 left = true;
-
-           }
-         }
-     }*/
+     }
     void UpdateKeys(){
 
         up = Input.GetKey(KeyCode.W);
