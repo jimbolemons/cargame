@@ -48,6 +48,7 @@ public class EventManager : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene("MenuScene");
+        Time.timeScale = 1;
         if (OnBackToMenu != null)
             OnBackToMenu();
 

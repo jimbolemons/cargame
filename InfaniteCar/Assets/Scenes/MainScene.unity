@@ -6008,7 +6008,7 @@ MonoBehaviour:
   turnAngle: 0
   CarMeshContainer: {fileID: 2023033186}
   pickups: {fileID: 1136172347}
-  DebugNoMovement: 1
+  DebugNoMovement: 0
   camera: {fileID: 48032076}
 --- !u!114 &1136172344
 MonoBehaviour:
@@ -6059,7 +6059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc8fa9e145462148bc519eca388078c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugKeys: 1
+  DebugKeys: 0
 --- !u!114 &1136172347
 MonoBehaviour:
   m_ObjectHideFlags: 0
