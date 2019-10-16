@@ -12,11 +12,11 @@ public class TileMover : MonoBehaviour
 	public List<Tile> Tiles = new List<Tile>();
 	public List<Tile> TilesToRemove = new List<Tile>();
 	//int segments = 6;
-	public float baseSpeed = 5f;
+	public float baseSpeed = .5f;
     float InitialBaseSpeed = .3f;
 	float playerSpeed = 0;
 	//float offset = 0;
-	float maxSpeed = .3f;
+	float maxSpeed = 1f;
 	float width=15;
     float sideForce = 0;
     float bumpAmount = .5f;

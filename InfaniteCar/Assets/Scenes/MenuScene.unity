@@ -4473,7 +4473,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 50bd28c579443b248ab057810dfc11a1, type: 2}
   - {fileID: 11400000, guid: ebca9ef82531bde49931331b5a948903, type: 2}
   CenterSpawn: {fileID: 1028749493}
-  playerData: {fileID: 0}
+  playerData: {fileID: 252046653}
   speedImage: {fileID: 430497892}
   gripImage: {fileID: 1232662303}
   accelImage: {fileID: 1747290400}
