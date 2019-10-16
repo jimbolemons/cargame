@@ -85,6 +85,16 @@ public class PlayerInput : MonoBehaviour
         action=false;
         actionRelease = true;
     }
+    public void SetActionAltDown()
+    {
+        action = true;
+        actionPress = true;
+    }
+    public void SetActionAltUp()
+    {
+        action = false;
+        actionRelease = true;
+    }
 
     public bool DebugKeys = false;
     void FixedUpdate()

@@ -139,7 +139,7 @@ public class Tile : MonoBehaviour
     public void SpawnPickup(){
         if(PickupSpawnPoints == null || PickupSpawnPoints.transform.childCount ==0) return;
         int doSpawn =  Random.Range(0, 100);
-        if(doSpawn > 25) return;
+        if(doSpawn > 50) return;
 
         int rand = Random.Range(0, PickupSpawnPoints.transform.childCount);
         GameObject pu = (GameObject)Instantiate( TileSpawner.instance.GetRandomPickup(), PickupSpawnPoints.transform.GetChild(rand).position + Vector3.up/2f,PickupSpawnPoints.transform.GetChild(rand).rotation,this.transform);

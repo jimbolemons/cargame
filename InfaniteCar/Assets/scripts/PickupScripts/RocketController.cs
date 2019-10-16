@@ -117,7 +117,11 @@ public class RocketController : MonoBehaviour
     
     private void OnCollisionEnter(Collision col)
     {
-        Debug.Log("boom"  + col.gameObject.name);
+       
+    }
+    private void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("boom" + col.gameObject.name);
         // if the bullet hits an enemy it will do this
         if (col.gameObject.tag == "Enemy")
         {
