@@ -18,6 +18,8 @@ public class EventManager : MonoBehaviour
 
     public static event GameEventAction OnResumeAftervideo;
 
+    
+
 
 
     void Awake(){
@@ -49,6 +51,7 @@ public class EventManager : MonoBehaviour
     {
         SceneManager.LoadScene("MenuScene");
         Time.timeScale = 1;
+
         if (OnBackToMenu != null)
             OnBackToMenu();
 

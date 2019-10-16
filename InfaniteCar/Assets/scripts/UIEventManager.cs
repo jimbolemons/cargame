@@ -7,6 +7,7 @@ public class UIEventManager : MonoBehaviour
 
 	public GameObject deathPanel;
 	public GameObject startPanel;
+    public GameObject mainCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class UIEventManager : MonoBehaviour
         EventManager.OnPlayerDied += OnPlayerDied;
         EventManager.OnGameStart += OnGameStart;
         EventManager.OnGameReset += OnGameReset;
+        EventManager.OnBackToMenu += OnBackToMenu;
         EventManager.OnResumeAftervideo += OnResumeAftervideo;
 
 
@@ -34,6 +36,12 @@ public class UIEventManager : MonoBehaviour
     void OnGameReset(){
     	startPanel.SetActive(true);
     	deathPanel.SetActive(false);
+
+    }
+    void OnBackToMenu()
+    {
+        mainCanvas.SetActive(false);
+       
 
     }
     void OnResumeAftervideo(){

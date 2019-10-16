@@ -8,6 +8,7 @@ public class CarTilting : MonoBehaviour
 	float rotataion = 180;
     float maxAngle = 35;
     float turnAngle = 0;
+    public float turnSpeed;
     GameManager GM;
     CarDataScriptableObject data;
     void Start()
@@ -26,12 +27,12 @@ public class CarTilting : MonoBehaviour
 
 
         if(input.Right() && turnAngle < maxAngle){
-            //turnAngle +=data.Grip * Time.fixedDeltaTime * 10f;
+            turnAngle +=data.Grip * Time.fixedDeltaTime * turnSpeed;
         }else if(input.Left()&& turnAngle > -maxAngle){
-            //turnAngle -= data.Grip * Time.fixedDeltaTime * 10f;
+           turnAngle -= data.Grip * Time.fixedDeltaTime * turnSpeed;
         }else if(!input.Right() && !input.Left() ){
             //if not turning apply turn angle to car/camera
-           // turnAngle *= .9f;
+            turnAngle *= .9f;
         }
 
         this.transform.localRotation = Quaternion.Euler(new Vector3(0,turnAngle,0));
