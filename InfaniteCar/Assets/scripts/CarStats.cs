@@ -139,6 +139,7 @@ public class CarStats : MonoBehaviour
     void OnResumeAftervideo(){
         GasAmount =100;
         DamageAmount=0;
+        if(this != null)
         this.transform.rotation = Quaternion.identity;
         
     }

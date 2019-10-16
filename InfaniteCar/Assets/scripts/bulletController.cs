@@ -46,9 +46,16 @@ public class bulletController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision col)
     {
-            Debug.Log("<color=yellow>something hit ai driver</color>");
+            
+       
 
-        Debug.Log("boom" +col.gameObject.name);
+
+    }
+    private void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("<color=yellow>something hit bullet</color>");
+
+        Debug.Log("boom" + col.gameObject.name);
         // if the bullet hits an enemy it will do this
         if (col.gameObject.tag == "Enemy")
         {
@@ -62,8 +69,5 @@ public class bulletController : MonoBehaviour
             bulletBounce = true;
             //Debug.Log(col.gameObject.tag);
         }
-       
-
-
     }
 }
