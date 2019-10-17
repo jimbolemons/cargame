@@ -163,6 +163,12 @@ public class CarMovement : MonoBehaviour
 
          
     }
+    public void Turn(float turnAmount)
+    {
+        this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles + new Vector3(0, turnAmount, 0), 1);
+
+
+    }
     // void HandleTilting(){
     //     if(input.Right() && turnAngle < 25){
     //         turnAngle +=1.75f;
