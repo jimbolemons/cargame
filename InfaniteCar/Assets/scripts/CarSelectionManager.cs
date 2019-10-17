@@ -86,11 +86,11 @@ public class CarSelectionManager : MonoBehaviour
         Title.text = currentSelection.CarType;
     }
     void UpdateCarStats(){
-        speedImage.fillAmount = currentSelection.Speed /1f;
+        speedImage.fillAmount = currentSelection.Speed /5f;
         gripImage.fillAmount = currentSelection.Grip /5f;
         accelImage.fillAmount = currentSelection.Acceleration /.1f;
 
-        AdditionalSpeedImage.fillAmount = (currentSelection.Speed /1f)  + ((float)CurrentCarUpgrades().Speed * .05f);
+        AdditionalSpeedImage.fillAmount = (currentSelection.Speed /5f)  + ((float)CurrentCarUpgrades().Speed * .05f);
         AdditionalGripImage.fillAmount = (currentSelection.Grip /5f)  + (CurrentCarUpgrades().Grip * .05f);
         AdditionalAccelImage.fillAmount = (currentSelection.Acceleration /.1f) + (CurrentCarUpgrades().Accel * .05f);
 

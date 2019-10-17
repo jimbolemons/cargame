@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: mr3
   m_EditorClassIdentifier: 
   CarType: mr3
-  Speed: 0.29
+  Speed: 1.4
   Grip: 5
   Acceleration: 0.01
   MeshObject: {fileID: 5918668758015435547, guid: 96097a9ef3550a24ab9ca025af6d1f00,

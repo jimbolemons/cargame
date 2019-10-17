@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: gti
   m_EditorClassIdentifier: 
   CarType: gti
-  Speed: 0.26
+  Speed: 2.32
   Grip: 3.24
   Acceleration: 0.029
   MeshObject: {fileID: 2889166326748645013, guid: d864a940e96edb141b74282a2704c383,

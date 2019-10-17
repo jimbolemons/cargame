@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Countach
   m_EditorClassIdentifier: 
   CarType: Countach
-  Speed: 0.7
+  Speed: 3.77
   Grip: 3.24
   Acceleration: 0.081
   MeshObject: {fileID: 9169477548798034448, guid: 573a5d085de5a63489de37c55967293f,

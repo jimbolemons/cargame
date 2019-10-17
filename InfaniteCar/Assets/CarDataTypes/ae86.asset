@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ae86
   m_EditorClassIdentifier: 
   CarType: ae86
-  Speed: 0.42
+  Speed: 2.36
   Grip: 3.24
   Acceleration: 0.034
   MeshObject: {fileID: 1826711225251759585, guid: 16c2c100c795b874e96d24e85fe065eb,

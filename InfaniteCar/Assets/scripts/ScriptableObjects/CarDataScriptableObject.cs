@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarDataScriptableObject : ScriptableObject
 {
     public string CarType;
-    [Range(0.0f, 1.0f)]
+    [Range(0.0f, 5.0f)]
     public float Speed;
 
     [Range(.5f, 5.0f)]

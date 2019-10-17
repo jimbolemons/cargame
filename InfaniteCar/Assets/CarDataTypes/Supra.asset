@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Supra
   m_EditorClassIdentifier: 
   CarType: Supra
-  Speed: 0.44
+  Speed: 2.61
   Grip: 2.13
   Acceleration: 0.054
   MeshObject: {fileID: 197399780137336876, guid: e0eb54a5078941a46ab74a0ab8bdea2a,
