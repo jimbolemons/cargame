@@ -86,7 +86,7 @@ public class CarMovement : MonoBehaviour
         }
         */
 
-        if (input.Left() && input.Right() == false)
+        if (input.Left() && input.Right() == false && input.Down() == false)
         {
             rotateSpeedL = rotateSpeedL2;
             rotateSpeedL2 += Time.fixedDeltaTime * CarData.Grip;
@@ -103,7 +103,7 @@ public class CarMovement : MonoBehaviour
             rotateSpeedL += rotateSpeedL2;
         }
 
-        if (input.Right() && input.Left() == false)
+        if (input.Right() && input.Left() == false && input.Down() == false)
         {
             rotateSpeedR = rotateSpeedR2;
             rotateSpeedR2 += Time.fixedDeltaTime * CarData.Grip;
@@ -120,6 +120,7 @@ public class CarMovement : MonoBehaviour
             rotateSpeedR += rotateSpeedR2;
 
         }
+        
         /*
         if (input.Right() && input.Left())
 

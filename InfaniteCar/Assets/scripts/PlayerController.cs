@@ -74,10 +74,10 @@ public class PlayerController : MonoBehaviour
         playerRight = this.transform.right;
 
         if(input.Down()){
-            if( PlayerBrakeAmount < .79f){
+            if( PlayerBrakeAmount < .29f){
                 PlayerBrakeAmount +=playerData.currentSelection.Acceleration*5f ;
             }else {
-                PlayerBrakeAmount =.8f;
+                PlayerBrakeAmount =.3f;
             }
 
         }else{
