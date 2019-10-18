@@ -26,22 +26,22 @@ public class WheelTurn : MonoBehaviour
         {
             if (input.Right())
             {
-                Debug.Log("Right1"); // this is getting called 
+                //Debug.Log("Right1"); // this is getting called 
                 tiltAroundX = 1 * tiltAngle; // why the fuck does this not work, it is identical to the left fucntion but does nothing
-                Debug.Log("Right2");// this is getting called 
+                //Debug.Log("Right2");// this is getting called 
             }
             else{
-                Debug.Log("not Right");
+               // Debug.Log("not Right");
 
                 tiltAroundX = 0 * tiltAngle;
             }
 
             if (input.Left())
             {
-                Debug.Log("left");
+                //Debug.Log("left");
                 tiltAroundX = -1 * tiltAngle;
             }else{
-                Debug.Log("not left");
+               // Debug.Log("not left");
 
                 tiltAroundX = 0 * tiltAngle;
             }

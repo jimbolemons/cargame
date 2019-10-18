@@ -61,18 +61,19 @@ public class AICarsManager : MonoBehaviour
     	if(GM.GameRunning()){
             
 
-	        if(Input.GetKeyUp(KeyCode.Space) ){
-	        	SpawnPC();
-	        }
+	       if(Input.GetKeyUp(KeyCode.Space) ){
+	      	SpawnPC();
+                SpawnPolice();
+            }
 	        if (Time.time - LastSpawnTime > 1)
 	        {
 	            SpawnPC();
 	            LastSpawnTime = Time.time;
 	        }
-            //if (Time.time - LastPoliceTime > 5)
+            if (Time.time - LastPoliceTime > 5)
             if(!policeSpawned)
             {
-                //SpawnPolice();
+                SpawnPolice();
                 policeSpawned=true;
                 LastPoliceTime = Time.time;
             }

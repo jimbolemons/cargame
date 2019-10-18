@@ -110,7 +110,7 @@ public class CarMovement : MonoBehaviour
             rotateSpeedR = rotateSpeedR2;
             rotateSpeedR2 += Time.fixedDeltaTime * CarData.Grip;
             rotateSpeedR += rotateSpeedR2;
-            Debug.Log(rotateSpeedR);
+            //Debug.Log(rotateSpeedR);
             if (rotateSpeedR > 10)
                 rotateSpeedR = 10;
             this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles + new Vector3(0, rotateSpeedR, 0), 1);

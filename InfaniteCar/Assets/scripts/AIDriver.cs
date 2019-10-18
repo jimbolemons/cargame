@@ -137,7 +137,7 @@ public class AIDriver : MonoBehaviour
             dir =pc.transform.position - this.transform.position;
             dir = dir.normalized;
 
-            this.transform.position +=dir * tileMover.GetUnstoppableSpeed() *1.0f;
+            this.transform.position +=dir * tileMover.GetUnstoppableSpeed() *5f;
         }
     }
     void StandardMovement(){
