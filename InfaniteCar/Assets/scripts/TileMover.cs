@@ -19,7 +19,7 @@ public class TileMover : MonoBehaviour
 	float maxSpeed = 1f;
 	float width=15;
     float sideForce = 0;
-    float bumpAmount = .25f;
+    
 
     //public float currentSpeed = 0;
    // PlayerInput input;
@@ -198,11 +198,11 @@ public class TileMover : MonoBehaviour
         return Tiles[2];
 
     }
-    public void BumpRight() {
-        sideForce = bumpAmount;
+    public void BumpRight(float Bump) {
+        sideForce = Bump;
     }
-    public void BumpLeft()
+    public void BumpLeft(float Bump)
     {
-        sideForce = -bumpAmount;
+        sideForce = -Bump;
     }
 }

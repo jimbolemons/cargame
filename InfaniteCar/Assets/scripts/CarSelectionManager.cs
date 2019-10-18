@@ -106,6 +106,7 @@ public class CarSelectionManager : MonoBehaviour
 
     public void Play(){
         if(playerData.playerUnlocks.Cars[SelectionIndex]){ //if unlocked
+            
     	   SceneManager.LoadScene("MainScene");
         }else{
             Debug.Log("TODO present buy button more");

@@ -91,7 +91,9 @@ public class CarMovement : MonoBehaviour
             rotateSpeedL = rotateSpeedL2;
             rotateSpeedL2 += Time.fixedDeltaTime * CarData.Grip;
             rotateSpeedL += rotateSpeedL2;
-            this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, rotateSpeedL, 0), 1);
+            if (rotateSpeedL > 10)
+                rotateSpeedL = 10;
+                this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, rotateSpeedL, 0), 1);
 
             // Skid();
 
@@ -108,7 +110,9 @@ public class CarMovement : MonoBehaviour
             rotateSpeedR = rotateSpeedR2;
             rotateSpeedR2 += Time.fixedDeltaTime * CarData.Grip;
             rotateSpeedR += rotateSpeedR2;
-
+            Debug.Log(rotateSpeedR);
+            if (rotateSpeedR > 10)
+                rotateSpeedR = 10;
             this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles + new Vector3(0, rotateSpeedR, 0), 1);
             //Skid();
 
@@ -120,7 +124,17 @@ public class CarMovement : MonoBehaviour
             rotateSpeedR += rotateSpeedR2;
 
         }
-        
+
+        if (input.Down() && input.Right() && input.Left() == false)
+        {
+
+        }
+
+        if (input.Down() && input.Left() && input.Right() == false)
+        {
+
+        }
+
         /*
         if (input.Right() && input.Left())
 

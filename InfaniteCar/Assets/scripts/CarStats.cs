@@ -41,6 +41,7 @@ public class CarStats : MonoBehaviour
        // OnPlayerDied += 
         EventManager.OnGameReset += OnGameReset;
         EventManager.OnResumeAftervideo += OnResumeAftervideo;
+        EventManager.OnBackToMenu += OnBackToMenu;
 
         
     }
@@ -135,6 +136,10 @@ public class CarStats : MonoBehaviour
 
         CoinsText.text = PointsCollected.ToString("00");
 
+    }
+    void OnBackToMenu()
+    {
+        SaveGameData();
     }
     void OnResumeAftervideo(){
         GasAmount =100;

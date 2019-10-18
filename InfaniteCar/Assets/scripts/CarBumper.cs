@@ -19,13 +19,13 @@ public class CarBumper : MonoBehaviour
     		case Bumperside.Right:
     			PlayerController.instance.TakeDamage(10);
                 CarMovement.instance.Turn(-5);
-                TileMover.instance.BumpLeft();
+                TileMover.instance.BumpLeft(.1f);
 
     		break;
     		case Bumperside.Left:
     			PlayerController.instance.TakeDamage(10);
                 CarMovement.instance.Turn(5);
-                TileMover.instance.BumpRight();
+                TileMover.instance.BumpRight(.1f);
 
     		break;
 

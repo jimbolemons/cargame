@@ -41,7 +41,7 @@ public class bulletController : MonoBehaviour
         }
 
         this.transform.position -= TileMover.instance.GetMovementUpdate();   
-        this.transform.position +=  this.transform.forward;
+        this.transform.position +=  this.transform.forward * 2;
 
     }
     private void OnCollisionEnter(Collision col)
@@ -66,7 +66,7 @@ public class bulletController : MonoBehaviour
         //if the bullet hits somthing that is not an enemy it will do this
         if (col.gameObject.tag != "Enemy")
         {
-            bulletBounce = true;
+            //bulletBounce = true;
             //Debug.Log(col.gameObject.tag);
         }
     }

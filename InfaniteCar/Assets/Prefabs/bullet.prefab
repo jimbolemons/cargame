@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9379b84dc53e7be48a130919c78ae44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howLongToLive: 4
+  howLongToLive: 3
   markedForDeath: 0
   bulletBounce: 0
   bounceTimer: 0.25

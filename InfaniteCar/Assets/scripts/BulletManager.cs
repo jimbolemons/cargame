@@ -66,10 +66,10 @@ public class BulletManager : MonoBehaviour
                 bulletsToRemove.Add(obj);
             }
             //if bullet gets too far away kill it
-            if (obj.transform.position.z > 20) {
+            //if (obj.transform.position.z > 20) {
                 //Debug.Log("kill me");
-                bulletsToRemove.Add(obj);
-            }
+              //  bulletsToRemove.Add(obj);
+            //}
           //if (bullet.collision == true)
           // {
           //    bulletsToRemove.Add(obj); 

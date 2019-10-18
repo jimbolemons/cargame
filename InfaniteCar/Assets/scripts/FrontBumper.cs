@@ -43,7 +43,7 @@ public class FrontBumper : MonoBehaviour
             if (col.gameObject.tag == "Building")
             {
                 // bump the car to the right
-                tilemover.BumpRight();
+                tilemover.BumpRight(.25f);
               //  Debug.Log("left");
                
                     PC.TakeDamage(10);
@@ -52,7 +52,7 @@ public class FrontBumper : MonoBehaviour
         else if (Right){
             if (col.gameObject.tag == "Building")
             {
-                tilemover.BumpLeft();
+                tilemover.BumpLeft(.25f);
                 //bump the car to the left
 
                 //Debug.Log("right");

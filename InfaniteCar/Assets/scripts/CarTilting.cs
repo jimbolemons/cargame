@@ -8,14 +8,17 @@ public class CarTilting : MonoBehaviour
 	float rotataion = 180;
     float maxAngle = 35;
     float turnAngle = 0;
+    float turn2 = 0;
     public float turnSpeed;
     GameManager GM;
     CarDataScriptableObject data;
+    TileMover tile;
     void Start()
     {
         GM = GameManager.instance;
         input = PlayerInput.instance;
         data = CarMovement.instance.CarData;
+        tile = TileMover.instance;
     }
 
     // Update is called once per frame
@@ -26,13 +29,33 @@ public class CarTilting : MonoBehaviour
 
 
 
-        if(input.Right() && turnAngle < maxAngle){
+        if(input.Right() && turnAngle < maxAngle && input.Down() == false)
+        {
             turnAngle +=data.Grip * Time.fixedDeltaTime * turnSpeed;
-        }else if(input.Left()&& turnAngle > -maxAngle){
+            turn2 = turnAngle / 50;
+
+            if (turn2 >= .1f)
+                turn2 = .1f;
+
+            if (turn2 < -.05f)
+                tile.BumpLeft(turn2);
+        }
+        if (input.Left() && input.Down() == false && turnAngle > -maxAngle ){
            turnAngle -= data.Grip * Time.fixedDeltaTime * turnSpeed;
-        }else if(!input.Right() && !input.Left() ){
+            turn2 = turnAngle / 50;
+
+            if (turn2 <= -.1f)
+                turn2 = -.1f;
+
+            if (turn2 > .05f)
+                tile.BumpRight(-turn2);          
+
+        }
+
+        if(!input.Right() && !input.Left() ){
             //if not turning apply turn angle to car/camera
             turnAngle *= .9f;
+            turn2 = 0;
         }
 
         this.transform.localRotation = Quaternion.Euler(new Vector3(0,turnAngle,0));
