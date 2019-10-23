@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 8454816440610840254}
   m_Layer: 0
   m_Name: bomb 1
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,15 +201,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHitObj: {fileID: 0}
-  isdead: 0
   speed: 0
   deathTimer: 3
   explotion: {fileID: 1569878991714682041, guid: bb363db11ec99cb4e8338dfe5f4dbc4b,
     type: 3}
-  maxDistance: 0
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
   bombRadius: 20
 --- !u!54 &8454816440610840254
 Rigidbody:

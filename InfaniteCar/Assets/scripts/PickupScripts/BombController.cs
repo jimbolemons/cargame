@@ -74,6 +74,11 @@ public class BombController : MonoBehaviour
                 GameManager.instance.AICars.RemoveDriver(hitColliders[i].GetComponent<AIDriver>());               
 
             }
+            if (hitColliders[i].gameObject.tag == "Police")
+            {
+                GameManager.instance.AICars.RemoveDriver(hitColliders[i].GetComponent<AIDriver>());
+                AICarsManager.policeSpawned = false;
+            }
             i++;
         }
 

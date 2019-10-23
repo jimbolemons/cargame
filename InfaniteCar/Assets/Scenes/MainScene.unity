@@ -6091,7 +6091,7 @@ MonoBehaviour:
   FrontSpawnPoint: {fileID: 754111681}
   hasOil: 0
   hasRockets: 0
-  hasBomb: 0
+  hasBomb: 1
   hasSpeed: 0
   hasShield: 0
   usingSpeed: 0

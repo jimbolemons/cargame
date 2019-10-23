@@ -18,7 +18,7 @@ public class TileSpawner : MonoBehaviour
 	public List<TileOptions> TileTypes = new List<TileOptions>();
 	TileMover mover;
 
-	int segments = 6;
+	int segments = 7;
     public int turns = 0;
     public List<GameObject> pickups = new List<GameObject>();
     public TileSpawnerScriptableObject spawnManagerValues;
@@ -60,7 +60,7 @@ public class TileSpawner : MonoBehaviour
     }
     void SpawnFirstTiles(){
     	for(int i = 0; i <segments;i ++){
-    		Tile obj = Instantiate(TileTypes[0].Tile, new Vector3(0,0,(i*50)-50),Quaternion.identity,this.transform).GetComponent<Tile>();
+    		Tile obj = Instantiate(TileTypes[0].Tile, new Vector3(0,0,(i*50)-100),Quaternion.identity,this.transform).GetComponent<Tile>();
     		mover.Tiles.Add(obj);
             obj.SetSiding(TileSiding.Beach);
 

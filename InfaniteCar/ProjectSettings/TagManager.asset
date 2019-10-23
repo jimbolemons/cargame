@@ -9,6 +9,8 @@ TagManager:
   - ground
   - Bullet
   - Building
+  - BombRadius
+  - Police
   layers:
   - Default
   - TransparentFX

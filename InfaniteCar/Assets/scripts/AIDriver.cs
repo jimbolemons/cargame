@@ -36,9 +36,11 @@ public class AIDriver : MonoBehaviour
 
     PlayerController pc;
     GameManager GM;
+    AICarsManager AI;
     void Start(){
         GM = GameManager.instance;
     	pc = PlayerController.instance;
+       // AI= AICarsManager.inst
     }
     public void Init(bool _onComing){
     	tileMover = TileMover.instance; 
@@ -131,13 +133,13 @@ public class AIDriver : MonoBehaviour
 
             dir = dir.normalized;
 
-            this.transform.position +=dir *tileMover.GetUnstoppableSpeed() *1f;
+            this.transform.position +=dir *tileMover.GetUnstoppableSpeed() *1.01f;
         }else{
             this.transform.LookAt(pc.transform.position);
             dir =pc.transform.position - this.transform.position;
             dir = dir.normalized;
 
-            this.transform.position +=dir * tileMover.GetUnstoppableSpeed() *5f;
+            this.transform.position +=dir * tileMover.GetUnstoppableSpeed() *1.01f;
         }
     }
     void StandardMovement(){
@@ -389,6 +391,7 @@ public class AIDriver : MonoBehaviour
     	//Debug.Log("End of track");
     	GameManager.instance.AICars.RemoveDriver(this,info);
        isdead = true;
+        if (police) AICarsManager.policeSpawned = false;
     }
     void OnCollisionEnter(Collision col)
     {
@@ -432,6 +435,13 @@ public class AIDriver : MonoBehaviour
         {
             Debug.Log("fuck" + col.gameObject.tag);
         }
+        //if (col.gameObject.tag == "BombRadius")
+        //{
+         //   Debug.Log("<color=red>fuck i blew up</color>");
+        //    isdead = true;
+        //    if (police)
+         //       GameManager.instance.AICars.RemoveDriver(this, "explosian");
+        //}
     }
 
 }

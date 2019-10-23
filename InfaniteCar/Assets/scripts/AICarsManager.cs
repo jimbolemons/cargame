@@ -16,7 +16,7 @@ public class AICarsManager : MonoBehaviour
 	bool OnComing = false;
 	float LastSpawnTime =0;
     float LastPoliceTime =0;
-    bool policeSpawned = true;
+    public static bool policeSpawned = false;
     AIDriver police;
 	GameManager GM;
     // Start is called before the first frame update
@@ -26,16 +26,24 @@ public class AICarsManager : MonoBehaviour
         EventManager.OnGameReset += OnGameReset;
 
         EventManager.OnResumeAftervideo += OnResumeAftervideo;
+        EventManager.OnBackToMenu += OnBackToMenu;
 
 
+    }
+    void OnBackToMenu()
+    {
+        policeSpawned = false;
     }
 
     void OnGameReset(){
     	ClearAll();
+        policeSpawned = false;
     }
 
     void OnResumeAftervideo(){
         ClearPolice();
+        ClearAll();
+        policeSpawned = false;
     }
 
     void ClearAll(){
@@ -43,8 +51,8 @@ public class AICarsManager : MonoBehaviour
         ClearCars();
     }
     void ClearPolice(){
-        if(police != null && police.gameObject!= null)
-        Destroy(police.gameObject);
+        //if(police != null && police.gameObject!= null)
+       // Destroy(police.gameObject);
         policeSpawned=false;
     }
     void ClearCars(){
@@ -62,21 +70,22 @@ public class AICarsManager : MonoBehaviour
             
 
 	       if(Input.GetKeyUp(KeyCode.Space) ){
-	      	SpawnPC();
-                SpawnPolice();
+	      	//SpawnPC();
+               // SpawnPolice();
             }
-	        if (Time.time - LastSpawnTime > 1)
+	       if (Time.time - LastSpawnTime > 1)
 	        {
 	            SpawnPC();
 	            LastSpawnTime = Time.time;
 	        }
-            if (Time.time - LastPoliceTime > 5)
+           //if ((Time.time - LastPoliceTime) > 5)
             if(!policeSpawned)
             {
                 SpawnPolice();
                 policeSpawned=true;
-                LastPoliceTime = Time.time;
+                //LastPoliceTime = Time.time;
             }
+
     	}
         UpdateEnemiesToBeRemoved();
         
@@ -93,8 +102,9 @@ public class AICarsManager : MonoBehaviour
     }
      void SpawnPolice(){
         Debug.Log("Police spawned");
-        police = (AIDriver)Instantiate(PoliceVehicle, Vector3.one*-50f, Quaternion.identity).GetComponent<AIDriver>();      
-  
+        police = (AIDriver)Instantiate(PoliceVehicle, Vector3.one*-50f, Quaternion.identity).GetComponent<AIDriver>();
+        police.gameObject.transform.localScale = Vector3.one * .75f;
+        Enemies.Add(police);
         police.InitPolice();
     }
     public void UpdateEnemiesToBeRemoved()
@@ -117,6 +127,7 @@ public class AICarsManager : MonoBehaviour
     {
        // if(s != null)
 //            Debug.Log(s);
+       
         if(Enemies.Contains(driver) && !EnemiesToRemove.Contains(driver))
         EnemiesToRemove.Add(driver);
 //        Debug.Log(driver);

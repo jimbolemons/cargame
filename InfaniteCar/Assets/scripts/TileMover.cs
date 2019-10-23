@@ -160,7 +160,18 @@ public class TileMover : MonoBehaviour
     }
 
     public float GetUnstoppableSpeed(){
-        return (baseSpeed*2f);
+        //return (baseSpeed*2f);
+        float debugNoMovement = 1;
+        if (PC.DebugNoMovement) debugNoMovement = 0;
+
+        //Debug.Log("Base: " + baseSpeed +  "  player speed: " + PC.GetCurrentSpeed());
+        float speedValue = baseSpeed + (baseSpeed * PC.GetCurrentSpeed());
+        speedValue *= HitBreak;//0-1
+        speedValue *= debugNoMovement;// 0 or 1
+       // speedValue *= PC.BrakeAmount;
+        //Debug.Log(PC.BrakeAmount);
+        return speedValue;
+        //return (baseSpeed * PlayerBrakeAmount) * HitBreak*debugNoMovement + PC.GetCurrentSpeed();
     }
 
     void RealignPlayer(){
