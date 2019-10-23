@@ -6,7 +6,7 @@ public class OilController : MonoBehaviour
 {
   
 
-    private void OnTriggerStay(Collider trig)
+    private void OnTriggerEnter(Collider trig)
     {
         if (trig.gameObject.tag == "Enemy")
         {
@@ -15,9 +15,16 @@ public class OilController : MonoBehaviour
 
         }
 
-        if (trig.gameObject.tag != "Enemy")
+        if (trig.gameObject.tag == "Police")
         {
+            Debug.Log("splush");
+            AIDriver driver = trig.GetComponent<AIDriver>();
 
+            driver.HitOil();
+
+            //GameManager.instance.AICars.RemoveDriver(trig.gameObject.GetComponent<AIDriver>());
+
+            Destroy(this.gameObject);
             //isdead = true;
             //Debug.Log(trig.gameObject.tag);
         }

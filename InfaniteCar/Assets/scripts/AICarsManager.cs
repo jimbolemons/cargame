@@ -24,7 +24,6 @@ public class AICarsManager : MonoBehaviour
     {
         GM = GameManager.instance;
         EventManager.OnGameReset += OnGameReset;
-
         EventManager.OnResumeAftervideo += OnResumeAftervideo;
         EventManager.OnBackToMenu += OnBackToMenu;
 
@@ -43,7 +42,7 @@ public class AICarsManager : MonoBehaviour
     void OnResumeAftervideo(){
         ClearPolice();
         ClearAll();
-        policeSpawned = false;
+        policeSpawned = false; 
     }
 
     void ClearAll(){

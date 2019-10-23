@@ -27,6 +27,8 @@ public class AIDriver : MonoBehaviour
     private float y ;
     public float wayPointdis;
     public float percentOfdis;
+    float oilTime = 5;
+    bool oil = false;
 
     private float rotSpeed = 2;
 
@@ -409,6 +411,29 @@ public class AIDriver : MonoBehaviour
         {
             Debug.Log(col.gameObject.tag);
         }
+
+    }
+    void OilSpin()
+    {
+        if (oil) { 
+            if (oilTime > 0)
+            {
+                // do slowdown / spinnout
+                oilTime -= Time.deltaTime;
+            }
+            else
+            {
+                oil = false;
+                oilTime = 5;
+
+            }
+        
+        }
+
+    }
+    public void HitOil()
+    {
+        oil = true;
 
     }
     void OnTriggerEnter(Collider col){
