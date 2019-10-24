@@ -53,6 +53,7 @@ MonoBehaviour:
   isdead: 0
   wayPointdis: 0
   percentOfdis: 0
+  spinOutRotation: {x: 0, y: 1000, z: 0}
 --- !u!65 &-5730046510109368766
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -343,6 +343,7 @@ MonoBehaviour:
   isdead: 0
   wayPointdis: 0
   percentOfdis: 0
+  spinOutRotation: {x: 0, y: 1000, z: 0}
 --- !u!54 &-4067134863323505433
 Rigidbody:
   m_ObjectHideFlags: 0

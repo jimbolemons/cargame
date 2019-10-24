@@ -21,14 +21,16 @@ public class AIDriver : MonoBehaviour
     float PoliceChaseSpeed= .4f;
     float laneOffset = 2f;
     bool police = false;
+    float policespeedMod = 1.01f;
     bool inPursuit = false;
     public bool isdead = false;
     private float x ;
     private float y ;
     public float wayPointdis;
     public float percentOfdis;
-    float oilTime = 5;
+    float oilTime = 2;
     bool oil = false;
+    public Vector3 spinOutRotation;
 
     private float rotSpeed = 2;
 
@@ -109,6 +111,7 @@ public class AIDriver : MonoBehaviour
     	if(currentTile != null && currentWaypoint !=null){
         	CheckWayPoint();
         	Movement();
+            OilSpin();
     	}else{
     		if(currentTile == null)
     		  Debug.Log("<color=red> AI with no tile</color>");
@@ -131,17 +134,20 @@ public class AIDriver : MonoBehaviour
 
         if(distance>10f){
             dir =RightLane() - this.transform.position;
+            if(!oil)
             this.transform.LookAt(RightLane());
 
             dir = dir.normalized;
 
-            this.transform.position +=dir *tileMover.GetUnstoppableSpeed() *1.01f;
+            this.transform.position +=dir *tileMover.GetUnstoppableSpeed() *policespeedMod;
         }else{
+            if(!oil)
             this.transform.LookAt(pc.transform.position);
+
             dir =pc.transform.position - this.transform.position;
             dir = dir.normalized;
 
-            this.transform.position +=dir * tileMover.GetUnstoppableSpeed() *1.01f;
+            this.transform.position +=dir * tileMover.GetUnstoppableSpeed() *policespeedMod;
         }
     }
     void StandardMovement(){
@@ -418,13 +424,16 @@ public class AIDriver : MonoBehaviour
         if (oil) { 
             if (oilTime > 0)
             {
-                // do slowdown / spinnout
+                policespeedMod = .2f;
+                this.transform.eulerAngles += spinOutRotation * Time.fixedDeltaTime;
+                Debug.Log("spinnout");
                 oilTime -= Time.deltaTime;
             }
             else
             {
+                policespeedMod = 1.01f;
                 oil = false;
-                oilTime = 5;
+                oilTime = 2;
 
             }
         
