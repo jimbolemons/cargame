@@ -27,9 +27,9 @@ public class CarTilting : MonoBehaviour
         if(!GM.GameRunning()) return;
 
 
+        Debug.Log(turn2);
 
-
-        if(input.Right() && turnAngle < maxAngle && input.Down() == false)
+        if(input.Right() && turnAngle < maxAngle && input.Down() == false && !input.Left())
         {
             turnAngle +=data.Grip * Time.fixedDeltaTime * turnSpeed;
             turn2 = turnAngle / 50;
@@ -37,18 +37,18 @@ public class CarTilting : MonoBehaviour
             if (turn2 >= .1f)
                 turn2 = .1f;
 
-            if (turn2 < -.05f)
-                tile.BumpLeft(turn2);
+            if (turn2 > .05f) 
+                tile.BumpLeft(turn2 / 5);
         }
-        if (input.Left() && input.Down() == false && turnAngle > -maxAngle ){
+        if (input.Left() && input.Down() == false && turnAngle > -maxAngle && !input.Right()){
            turnAngle -= data.Grip * Time.fixedDeltaTime * turnSpeed;
             turn2 = turnAngle / 50;
 
             if (turn2 <= -.1f)
                 turn2 = -.1f;
 
-            if (turn2 > .05f)
-                tile.BumpRight(-turn2);          
+            if (turn2 < -.05f) 
+                tile.BumpLeft(turn2 / 5);          
 
         }
 

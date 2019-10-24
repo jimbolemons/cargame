@@ -33,7 +33,8 @@ public class CarStats : MonoBehaviour
     public int PointsCollected = 0;
     public bool DebugInvinsable =false;
     PlayerData playerData;
-   // public Event PlayerDied;
+    public CameraController camera;
+    // public Event PlayerDied;
     void Awake(){
         instance = this;
     	PC = this.GetComponent<PlayerController>();
@@ -86,7 +87,9 @@ public class CarStats : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
-        if(DebugInvinsable) return;
+        camera.CameraShake(.2f, 50);
+        PostProcessingEffectsManager.instance.Flash();
+        if (DebugInvinsable) return;
         Debug.Log("Player took " + amount  + " damage");
         
         DamageAmount += amount;

@@ -126,8 +126,8 @@ public class PlayerController : MonoBehaviour
         TakeDamage(50);
     }
     public void TakeDamage(int amount){
-        camera.CameraShake(.2f,50);
-        PostProcessingEffectsManager.instance.Flash();
+        //camera.CameraShake(.2f,50);
+        //PostProcessingEffectsManager.instance.Flash();
         if (!pickups.usingShield)
         this.GetComponent<CarStats>().TakeDamage(amount);
 

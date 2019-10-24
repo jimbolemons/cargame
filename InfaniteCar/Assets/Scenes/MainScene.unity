@@ -6141,6 +6141,7 @@ MonoBehaviour:
   DistanceGauge: {fileID: 444013354}
   PointsCollected: 0
   DebugInvinsable: 0
+  camera: {fileID: 48032076}
 --- !u!1 &1162036292
 GameObject:
   m_ObjectHideFlags: 0

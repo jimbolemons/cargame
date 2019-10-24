@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Police
   m_EditorClassIdentifier: 
   CarType: Police
-  Speed: 0
-  Grip: 0.57
+  Speed: 5
+  Grip: 5
   Acceleration: 0.0109
   MeshObject: {fileID: 2017271653730460869, guid: c2f66220cb39eae4bb067df2ce3e629f,
     type: 3}
