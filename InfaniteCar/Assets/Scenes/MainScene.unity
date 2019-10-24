@@ -6023,7 +6023,7 @@ MonoBehaviour:
   turnAngle: 0
   CarMeshContainer: {fileID: 2023033186}
   pickups: {fileID: 1136172347}
-  DebugNoMovement: 1
+  DebugNoMovement: 0
   camera: {fileID: 48032076}
 --- !u!114 &1136172344
 MonoBehaviour:
@@ -6089,7 +6089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RearSpawnPoint: {fileID: 1827258883}
   FrontSpawnPoint: {fileID: 754111681}
-  hasOil: 1
+  hasOil: 0
   hasRockets: 0
   hasBomb: 0
   hasSpeed: 0

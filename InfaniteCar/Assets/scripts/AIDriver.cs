@@ -19,7 +19,7 @@ public class AIDriver : MonoBehaviour
     int wayIndex = 0;
     float speed = .3f;
     float PoliceChaseSpeed= .4f;
-    float laneOffset = 2f;
+    float laneOffset = 2.5f;
     bool police = false;
     float policespeedMod = 1.01f;
     bool inPursuit = false;
@@ -32,7 +32,7 @@ public class AIDriver : MonoBehaviour
     bool oil = false;
     public Vector3 spinOutRotation;
 
-    private float rotSpeed = 2;
+    private float rotSpeed = 500f;
 
     private Quaternion _lookRotation;
     private Vector3 _direction;
@@ -160,20 +160,20 @@ public class AIDriver : MonoBehaviour
             dir = RightLane() - this.transform.position;
             if(nextWaypoint != null)
             dir2 = RightLane2() - this.transform.position;
-            this.transform.LookAt(RightLane());
-           //_direction = (RightLane()  - transform.position).normalized;
-          // _lookRotation = Quaternion.LookRotation(_direction);
-           //transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * rotSpeed);
+            //this.transform.LookAt(RightLane());
+           _direction = (RightLane()  - transform.position).normalized;
+           _lookRotation = Quaternion.LookRotation(_direction);
+           transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * rotSpeed);
         }
         else
         {
             dir = LeftLane() - this.transform.position;
             if(nextWaypoint != null)
             dir2 = LeftLane2() - this.transform.position;
-            this.transform.LookAt(LeftLane());
-           //_direction = (LeftLane() - transform.position).normalized;
-           //_lookRotation = Quaternion.LookRotation(_direction);
-           // transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * rotSpeed);
+            //this.transform.LookAt(LeftLane());
+           _direction = (LeftLane() - transform.position).normalized;
+           _lookRotation = Quaternion.LookRotation(_direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * rotSpeed);
         }
         dir = dir.normalized;
         if(nextWaypoint != null)
@@ -462,12 +462,12 @@ public class AIDriver : MonoBehaviour
             if (!police)
                 GameManager.instance.AICars.RemoveDriver(this, "collision");
 
-            Debug.Log("boom" + col.gameObject.name);
+           // Debug.Log("boom" + col.gameObject.name);
             //mark the enemy as dead
         }
         else if (col.gameObject.tag != "Bullet") //if the bullet hits somthing that is not an enemy it will do this
         {
-            Debug.Log("fuck" + col.gameObject.tag);
+            //Debug.Log("fuck" + col.gameObject.tag);
         }
         //if (col.gameObject.tag == "BombRadius")
         //{

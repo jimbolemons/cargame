@@ -53,9 +53,9 @@ public class bulletController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider col)
     {
-        Debug.Log("<color=yellow>something hit bullet</color>");
+        //Debug.Log("<color=yellow>something hit bullet</color>");
 
-        Debug.Log("boom" + col.gameObject.name);
+       // Debug.Log("boom" + col.gameObject.name);
         // if the bullet hits an enemy it will do this
         if (col.gameObject.tag == "Enemy")
         {
