@@ -2941,7 +2941,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637189809}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6092,7 +6092,7 @@ MonoBehaviour:
   hasOil: 0
   hasRockets: 0
   hasBomb: 0
-  hasSpeed: 0
+  hasSpeed: 1
   hasShield: 0
   usingSpeed: 0
   usingShield: 0
@@ -7479,6 +7479,7 @@ MonoBehaviour:
   Tiles: []
   TilesToRemove: []
   baseSpeed: 0.075
+  pickups: {fileID: 1136172347}
   PlayerBrakeAmount: 1
 --- !u!4 &1592896612
 Transform:

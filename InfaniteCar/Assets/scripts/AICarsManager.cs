@@ -101,7 +101,7 @@ public class AICarsManager : MonoBehaviour
     }
      void SpawnPolice(){
         Debug.Log("Police spawned");
-        police = (AIDriver)Instantiate(PoliceVehicle, Vector3.one*-50f, Quaternion.identity).GetComponent<AIDriver>();
+        police = (AIDriver)Instantiate(PoliceVehicle, Vector3.one * -50f, Quaternion.identity).GetComponent<AIDriver>();
         police.gameObject.transform.localScale = Vector3.one * .75f;
         Enemies.Add(police);
         police.InitPolice();

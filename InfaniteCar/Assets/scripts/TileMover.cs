@@ -19,14 +19,14 @@ public class TileMover : MonoBehaviour
 	float maxSpeed = 1f;
 	float width=15;
     float sideForce = 0;
-    
+    public PickupsManager pickups;
 
     //public float currentSpeed = 0;
-   // PlayerInput input;
+    // PlayerInput input;
 
 
 
-	public float PlayerBrakeAmount = 1;
+    public float PlayerBrakeAmount = 1;
 
 
 
@@ -150,8 +150,9 @@ public class TileMover : MonoBehaviour
         speedValue *= HitBreak;//0-1
         speedValue *= debugNoMovement;// 0 or 1
         speedValue *= PC.BrakeAmount;
-        //Debug.Log(PC.BrakeAmount);
-        return speedValue;
+        
+            //Debug.Log(PC.BrakeAmount);
+            return speedValue;
         //return (baseSpeed * PlayerBrakeAmount) * HitBreak*debugNoMovement + PC.GetCurrentSpeed();
     }
     public Vector3 GetSideForce()
@@ -168,7 +169,9 @@ public class TileMover : MonoBehaviour
         float speedValue = baseSpeed + (baseSpeed * PC.GetCurrentSpeed());
         speedValue *= HitBreak;//0-1
         speedValue *= debugNoMovement;// 0 or 1
-       // speedValue *= PC.BrakeAmount;
+        if (pickups.usingSpeed)
+            speedValue /= 1.5f;
+        // speedValue *= PC.BrakeAmount;
         //Debug.Log(PC.BrakeAmount);
         return speedValue;
         //return (baseSpeed * PlayerBrakeAmount) * HitBreak*debugNoMovement + PC.GetCurrentSpeed();

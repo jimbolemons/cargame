@@ -132,14 +132,14 @@ public class AIDriver : MonoBehaviour
         Vector3 dir= Vector3.zero;
         float distance  = Vector3.Distance(this.transform.position, pc.transform.position);
 
-        if(distance>10f){
+        if(distance>15f){
             dir =RightLane() - this.transform.position;
             if(!oil)
             this.transform.LookAt(RightLane());
 
             dir = dir.normalized;
 
-            this.transform.position +=dir *tileMover.GetUnstoppableSpeed() *policespeedMod;
+            this.transform.position +=dir *tileMover.GetUnstoppableSpeed() *policespeedMod *1.1f;
         }else{
             if(!oil)
             this.transform.LookAt(pc.transform.position);
