@@ -6017,6 +6017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRight: {x: 0, y: 0, z: 1}
+  playerFront: {x: 0, y: 0, z: 1}
   onComingWaypoint: {fileID: 0}
   NextWaytotalDistance: 0
   currTile: {fileID: 0}
@@ -6092,7 +6093,7 @@ MonoBehaviour:
   hasOil: 0
   hasRockets: 0
   hasBomb: 0
-  hasSpeed: 1
+  hasSpeed: 0
   hasShield: 0
   usingSpeed: 0
   usingShield: 0
@@ -7725,6 +7726,7 @@ GameObject:
   - component: {fileID: 1633528703}
   - component: {fileID: 1633528705}
   - component: {fileID: 1633528704}
+  - component: {fileID: 1633528706}
   m_Layer: 13
   m_Name: RearBumber
   m_TagString: Player
@@ -7740,7 +7742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633528702}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: -2}
+  m_LocalPosition: {x: -0, y: 0, z: -3.21}
   m_LocalScale: {x: 0.5, y: 1, z: 0.75}
   m_Children: []
   m_Father: {fileID: 1014229353}
@@ -7767,6 +7769,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633528702}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1633528706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633528702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4405c8c489ab8ba469c9f4f8895700aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bumperside: 3
 --- !u!1 &1635240935
 GameObject:
   m_ObjectHideFlags: 0
@@ -9503,7 +9518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038472370}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 1.55}
+  m_LocalPosition: {x: 0, y: 0, z: 0.83}
   m_LocalScale: {x: 0.5, y: 1, z: 0.75}
   m_Children: []
   m_Father: {fileID: 1014229353}

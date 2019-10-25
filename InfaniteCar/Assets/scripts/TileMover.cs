@@ -19,6 +19,7 @@ public class TileMover : MonoBehaviour
 	float maxSpeed = 1f;
 	float width=15;
     float sideForce = 0;
+    float frontForce = 0;
     public PickupsManager pickups;
 
     //public float currentSpeed = 0;
@@ -80,9 +81,9 @@ public class TileMover : MonoBehaviour
 
         
         if (Mathf.Abs(sideForce) > 0) sideForce *= .9f;
+        if (Mathf.Abs(frontForce) > 0) frontForce *= .9f;
 
-        
-        
+
     }
 
     void CheckTilestoRemove(){
@@ -137,7 +138,7 @@ public class TileMover : MonoBehaviour
     }
     float HitBreak = 1; 
     public Vector3 GetMovementUpdate(){
-        return PC.playerForward* GetSpeed() + GetSideForce();
+        return PC.playerForward* GetSpeed() + GetSideForce() + GetFrontForce();
     }
     
 
@@ -158,6 +159,10 @@ public class TileMover : MonoBehaviour
     public Vector3 GetSideForce()
     {
         return PC.playerRight * sideForce;
+    }
+    public Vector3 GetFrontForce()
+    {
+        return PC.playerFront * frontForce;
     }
 
     public float GetUnstoppableSpeed(){
@@ -218,5 +223,9 @@ public class TileMover : MonoBehaviour
     public void BumpLeft(float Bump)
     {
         sideForce = -Bump;
+    }
+    public void BumpFront(float Bump)
+    {
+        frontForce = Bump;
     }
 }

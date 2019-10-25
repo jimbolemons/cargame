@@ -27,7 +27,7 @@ public class CarTilting : MonoBehaviour
         if(!GM.GameRunning()) return;
 
 
-        Debug.Log(turn2);
+       // Debug.Log(turn2);
 
         if(input.Right() && turnAngle < maxAngle && input.Down() == false && !input.Left())
         {

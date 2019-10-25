@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     //public Vector3 playerForward = new Vector3(0,0,1);
     public Vector3 playerRight = new Vector3(0, 0, 1);
+    public Vector3 playerFront = new Vector3(0, 0, 1);
     // Start is called before the first frame update
 
 
@@ -72,6 +73,7 @@ public class PlayerController : MonoBehaviour
     {
        // playerForward = this.transform.forward;
         playerRight = this.transform.right;
+        playerFront = this.transform.forward;
 
         if(input.Down()){
             if( PlayerBrakeAmount < .29f){
@@ -123,7 +125,7 @@ public class PlayerController : MonoBehaviour
     
     public void HitOtherCar(){
       
-        TakeDamage(50);
+        TakeDamage(10);
     }
     public void TakeDamage(int amount){
         //camera.CameraShake(.2f,50);

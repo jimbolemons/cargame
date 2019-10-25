@@ -21,7 +21,7 @@ public class AIDriver : MonoBehaviour
     float PoliceChaseSpeed= .4f;
     float laneOffset = 2.5f;
     bool police = false;
-    float policespeedMod = 1.01f;
+    float policespeedMod = 1f;
     bool inPursuit = false;
     public bool isdead = false;
     private float x ;
@@ -132,7 +132,7 @@ public class AIDriver : MonoBehaviour
         Vector3 dir= Vector3.zero;
         float distance  = Vector3.Distance(this.transform.position, pc.transform.position);
 
-        if(distance>15f){
+        if(distance>10f){
             dir =RightLane() - this.transform.position;
             if(!oil)
             this.transform.LookAt(RightLane());
@@ -449,12 +449,18 @@ public class AIDriver : MonoBehaviour
         if (col.gameObject.tag == "Player") 
         {
             Debug.Log("<color=red>Player hit car from AIDriver on trigger</color>");
+            if(!police)
             isdead = true;
+
             if(!police)
             GameManager.instance.AICars.RemoveDriver(this,"Collision");
-            
+
+            if(!police)
             PlayerController.instance.HitOtherCar();
-            TileMover.instance.PlayerHitCar();
+
+            if (!police)
+                TileMover.instance.PlayerHitCar();
+            
         }
         if (col.gameObject.tag == "Bullet")
         {
