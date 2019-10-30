@@ -40,6 +40,7 @@ public class PostProcessingEffectsManager : MonoBehaviour
                 pushVals[i] *= .95f;
             if (pushVals[i] < 0)
                 pushVals[i] *= .95f;
+            // if push vals is above a certin point change a bool to true to take more damage
         }
 
         
