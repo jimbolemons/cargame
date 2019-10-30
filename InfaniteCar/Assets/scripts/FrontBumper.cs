@@ -37,7 +37,7 @@ public class FrontBumper : MonoBehaviour
             //  Debug.Log("front");
 
                 
-                    PC.TakeDamage(1000);
+                    PC.TakeDamage(100);
             }
         }else if (Left){
             if (col.gameObject.tag == "Building")

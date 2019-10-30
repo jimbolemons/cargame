@@ -15,7 +15,7 @@ public class LampPostTrigger : MonoBehaviour
 
     		LampPhysicsObj.GetComponent<Rigidbody>().AddForce(PlayerController.instance.playerForward*10000f);
 
-            col.GetComponentInParent<CarStats>().TakeDamage(10);
+            col.GetComponentInParent<PlayerController>().TakeDamage(10);
 
     	}
     }

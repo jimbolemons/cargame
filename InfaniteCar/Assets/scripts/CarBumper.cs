@@ -14,7 +14,7 @@ public class CarBumper : MonoBehaviour
 
     	switch(bumperside){
     		case Bumperside.Front:
-    			PlayerController.instance.TakeDamage(10);
+    			PlayerController.instance.TakeDamage(100);
                 TileMover.instance.BumpFront(-.1f);
                 break;
     		case Bumperside.Right:
