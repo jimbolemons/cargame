@@ -178,7 +178,7 @@ public class PickupsManager : MonoBehaviour
     void SpawnBomb(){
     	Tile t = TileMover.instance.GetCurrentTile();
     	hasBomb = false;
-        GameObject bombObject = Instantiate(bombPrefab, RearSpawnPoint.position, RearSpawnPoint.rotation, null);
+        GameObject bombObject = Instantiate(bombPrefab, new Vector3(RearSpawnPoint.position.x, 0, RearSpawnPoint.position.z), RearSpawnPoint.rotation, null);
         bombObject.transform.SetParent(t.transform);
     }
 }

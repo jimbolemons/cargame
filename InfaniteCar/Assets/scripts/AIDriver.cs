@@ -464,7 +464,8 @@ public class AIDriver : MonoBehaviour
         }
         if (col.gameObject.tag == "Bullet")
         {
-            isdead = true;
+            if (!police)
+                isdead = true;
             if (!police)
                 GameManager.instance.AICars.RemoveDriver(this, "collision");
 

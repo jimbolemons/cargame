@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b1c8198f8d5324988192d880c48013, type: 3}
   m_Name: Chroma
   m_EditorClassIdentifier: Assembly-CSharp::PostProcessingEffectScriptableObject
-  intensity: 2
+  intensity: 14.9
   color: {r: 1, g: 1, b: 1, a: 1}
   EffectObject: {fileID: 1714456352110584763, guid: 1c213bc1a4a4ce04b95976f6d6e92bae,
     type: 3}

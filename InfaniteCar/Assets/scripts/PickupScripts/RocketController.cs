@@ -131,7 +131,7 @@ public class RocketController : MonoBehaviour
         //if the bullet hits somthing that is not an enemy it will do this
         if (col.gameObject.tag != "Enemy")
         {
-            markedForExplode = true;
+            //markedForExplode = true;
             //Debug.Log(col.gameObject.tag);
         }
 

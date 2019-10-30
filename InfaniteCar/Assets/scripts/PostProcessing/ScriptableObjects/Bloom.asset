@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b1c8198f8d5324988192d880c48013, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: Assembly-CSharp::PostProcessingEffectScriptableObject
-  intensity: 5
-  color: {r: 1, g: 0, b: 0.42660618, a: 1}
+  intensity: 10
+  color: {r: 0.9716981, g: 0.8937789, b: 0.9270856, a: 0}
   EffectObject: {fileID: 6586745337278024138, guid: 23985163188983049af7782fbc6bad1a,
     type: 3}

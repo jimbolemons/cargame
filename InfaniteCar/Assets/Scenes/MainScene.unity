@@ -2951,7 +2951,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e3f62d42673a42d4e8678a2f131c0bcf, type: 2}
+  - {fileID: 2100000, guid: 193f3cd34de091d4da6a9c89483be652, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4971,6 +4971,7 @@ GameObject:
   - component: {fileID: 963194230}
   - component: {fileID: 963194232}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5058,6 +5059,8 @@ MonoBehaviour:
   effectScripts:
   - {fileID: 11400000, guid: c1698febe9c94204a8d2aaff8748c7ff, type: 2}
   - {fileID: 11400000, guid: 65ac6be1f9e8c8a48a2d390461bd7179, type: 2}
+  mat: {fileID: 2100000, guid: 193f3cd34de091d4da6a9c89483be652, type: 2}
+  boop: 0
   flashLength: 1
 --- !u!114 &963194230
 MonoBehaviour:
@@ -5119,6 +5122,19 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1469bd4a2711fdb4e80cc54ee9f43238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectMat: {fileID: 2100000, guid: 193f3cd34de091d4da6a9c89483be652, type: 2}
 --- !u!114 &963194232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6092,7 +6108,7 @@ MonoBehaviour:
   FrontSpawnPoint: {fileID: 754111681}
   hasOil: 0
   hasRockets: 0
-  hasBomb: 0
+  hasBomb: 1
   hasSpeed: 0
   hasShield: 0
   usingSpeed: 0
