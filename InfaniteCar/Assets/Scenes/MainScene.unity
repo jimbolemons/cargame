@@ -5060,7 +5060,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1698febe9c94204a8d2aaff8748c7ff, type: 2}
   - {fileID: 11400000, guid: 65ac6be1f9e8c8a48a2d390461bd7179, type: 2}
   mat: {fileID: 2100000, guid: 193f3cd34de091d4da6a9c89483be652, type: 2}
-  boop: 0
+  boop1: 0
+  boop2: 0
+  boop3: 0
+  boop4: 0
+  pushVals:
+  - 0
+  - 0
+  - 0
+  - 0
   flashLength: 1
 --- !u!114 &963194230
 MonoBehaviour:
