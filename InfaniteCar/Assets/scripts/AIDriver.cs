@@ -36,6 +36,7 @@ public class AIDriver : MonoBehaviour
 
     private Quaternion _lookRotation;
     private Vector3 _direction;
+    float rand;
 
 
     PlayerController pc;
@@ -44,7 +45,8 @@ public class AIDriver : MonoBehaviour
     void Start(){
         GM = GameManager.instance;
     	pc = PlayerController.instance;
-       // AI= AICarsManager.inst
+        // AI= AICarsManager.inst
+        rand = Random.Range(.1f, -.1f);
     }
     public void Init(bool _onComing){
     	tileMover = TileMover.instance; 
@@ -73,24 +75,18 @@ public class AIDriver : MonoBehaviour
     	
     }
     void OnDestroy(){
-        DebugDeath("On Destroy");
-        GameManager.instance.AICars.RemoveDriver(this);
+       RemoveDriver("On Destroy");
 
     }
     void OnDisable(){
-        DebugDeath("On Disable");
-        GameManager.instance.AICars.RemoveDriver(this);
+       RemoveDriver("On Disable");
 
     }
     void OnDisabled(){
-        DebugDeath("On Disabled");
-        GameManager.instance.AICars.RemoveDriver(this);
+        RemoveDriver("On Disabled");
 
     }
-    void DebugDeath(string info){
-     //   if(police)
-//        Debug.Log(info);
-    }
+   
     public void InitPolice(){
         tileMover = TileMover.instance; 
         
@@ -116,10 +112,9 @@ public class AIDriver : MonoBehaviour
     		if(currentTile == null)
     		  Debug.Log("<color=red> AI with no tile</color>");
             
-    		if(currentWaypoint == null)
-    		  Debug.Log("<color=red> AI with no waypoint</color>");
+    		if(currentWaypoint == null)    		  
 
-           GameManager.instance.AICars.RemoveDriver(this);
+            RemoveDriver("<color=red> AI with no waypoint</color>");
            isdead =true;
     	}
     }
@@ -130,6 +125,7 @@ public class AIDriver : MonoBehaviour
     }
     void PoliceMovement(){
         Vector3 dir= Vector3.zero;
+        Vector3 target = Vector3.zero;
         float distance  = Vector3.Distance(this.transform.position, pc.transform.position);
 
         if(distance>10f){
@@ -141,10 +137,16 @@ public class AIDriver : MonoBehaviour
 
             this.transform.position +=dir *tileMover.GetUnstoppableSpeed() *policespeedMod *1.1f;
         }else{
-            if(!oil)
-            this.transform.LookAt(pc.transform.position);
+            if (!oil)
+               
+            if (rand > 0)
+               target = pc.transform.position + pc.transform.right * laneOffset;
+            else
+                target = pc.transform.position + pc.transform.right * -laneOffset;
 
-            dir =pc.transform.position - this.transform.position;
+            this.transform.LookAt(target);
+
+            dir =target - this.transform.position;
             dir = dir.normalized;
 
             this.transform.position +=dir * tileMover.GetUnstoppableSpeed() *policespeedMod;
@@ -260,7 +262,7 @@ public class AIDriver : MonoBehaviour
                 Tile nextTile = TileMover.instance.FindTileAfter(currentTile);
                 if (nextTile == null)
                 {
-                    RemoveDriver("End of way");
+                    RemoveDriver("End of way 1");
                     return Vector3.zero;
                 }
                 else
@@ -280,7 +282,7 @@ public class AIDriver : MonoBehaviour
                 Tile nextTile = TileMover.instance.FindTileAfter(currentTile);
                 if (nextTile == null)
                 {
-                    RemoveDriver("End of way");
+                    RemoveDriver("End of way 2");
                     return Vector3.zero;
                 }
                 else
@@ -305,7 +307,7 @@ public class AIDriver : MonoBehaviour
                 Tile nextTile = TileMover.instance.FindTileAfter(currentTile);
                 if (nextTile == null)
                 {
-                    RemoveDriver("End of way");
+                    RemoveDriver("End of way 3");
                     return null;
                 }
                 else
@@ -325,7 +327,7 @@ public class AIDriver : MonoBehaviour
                 Tile nextTile = TileMover.instance.FindTileAfter(currentTile);
                 if (nextTile == null)
                 {
-                    RemoveDriver("End of way");
+                    RemoveDriver("End of way 4");
                     return null;
                 }
                 else
@@ -355,7 +357,7 @@ public class AIDriver : MonoBehaviour
 
                 if (currentTile == null)
                 {
-                    RemoveDriver("End of way");
+                    RemoveDriver("End of way 5");
                 }
                 else
                 {
@@ -381,7 +383,7 @@ public class AIDriver : MonoBehaviour
 
                 if (currentTile == null)
                 {
-                    RemoveDriver("End of way");
+                    RemoveDriver("End of way 6");
                 }
                 else
                 {
@@ -396,9 +398,13 @@ public class AIDriver : MonoBehaviour
         }
     }
     public void RemoveDriver(string info){
-    	//Debug.Log("End of track");
-    	GameManager.instance.AICars.RemoveDriver(this,info);
-       isdead = true;
+        if (police)
+        Debug.Log("police" + info);
+        Debug.Log(info);
+
+        isdead = true;
+        GameManager.instance.AICars.RemoveDriver(this,info);
+       
         if (police) AICarsManager.policeSpawned = false;
     }
     void OnCollisionEnter(Collision col)
@@ -407,10 +413,11 @@ public class AIDriver : MonoBehaviour
 
         if (col.gameObject.tag == "Bullet")
         {
+            if (!police)
+            { 
             isdead = true;
-            if(!police)
-            GameManager.instance.AICars.RemoveDriver(this,"collision");
-
+            RemoveDriver("collision with bullet");
+            }
             Debug.Log("boom" + col.gameObject.name);
             //mark the enemy as dead
         }else if (col.gameObject.tag != "Bullet") //if the bullet hits somthing that is not an enemy it will do this
@@ -445,30 +452,33 @@ public class AIDriver : MonoBehaviour
         oil = true;
 
     }
+    public void Bump(float f)
+    {
+
+       // this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, f, 0), 1);
+
+
+    }
     void OnTriggerEnter(Collider col){
         if (col.gameObject.tag == "Player") 
         {
             Debug.Log("<color=red>Player hit car from AIDriver on trigger</color>");
-            if(!police)
-            isdead = true;
-
-            if(!police)
-            GameManager.instance.AICars.RemoveDriver(this,"Collision");
-
-            if(!police)
-            PlayerController.instance.HitOtherCar();
-
             if (!police)
-                TileMover.instance.PlayerHitCar();
+            {
+                    isdead = true;                
+                    RemoveDriver("trigger with player");                
+                    PlayerController.instance.HitOtherCar();                
+                    TileMover.instance.PlayerHitCar();
+            }
             
         }
         if (col.gameObject.tag == "Bullet")
         {
             if (!police)
-                isdead = true;
-            if (!police)
-                GameManager.instance.AICars.RemoveDriver(this, "collision");
-
+            { 
+                isdead = true;            
+                RemoveDriver("trigger with bullet");
+            }
            // Debug.Log("boom" + col.gameObject.name);
             //mark the enemy as dead
         }

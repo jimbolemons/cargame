@@ -39,8 +39,7 @@ public class AICarsManager : MonoBehaviour
         policeSpawned = false;
     }
 
-    void OnResumeAftervideo(){
-        ClearPolice();
+    void OnResumeAftervideo(){        
         ClearAll();
         policeSpawned = false; 
     }
