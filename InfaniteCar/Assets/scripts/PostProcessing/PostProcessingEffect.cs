@@ -28,7 +28,7 @@ public class PostProcessingEffect : MonoBehaviour
 	PostProcessVolume  volume;
 	Coroutine routine;
 	public Coroutine Routine{ set{routine = value;} get{return routine;}}
-	bool test =false;
+	//bool test =false;
 	bool destroy = false;
 	public virtual void Init(PostProcessingEffectScriptableObject _script,bool doDestroy){
 		destroy= doDestroy;
@@ -64,7 +64,7 @@ public class PostProcessingEffect : MonoBehaviour
     }
     public virtual IEnumerator TurnOffRoutine(float length){
     	float time = 0;
-		float scale=0;
+		//float scale=0;
     	while(time<length){
 			time += Time.fixedDeltaTime;
 			 SetValues(1f-( time/length ));
@@ -105,7 +105,7 @@ public class PostProcessingEffect : MonoBehaviour
 	public virtual IEnumerator FlashRoutine(float length){
 		float time = 0;
 		float third = length*.33f;
-		float scale=0;
+		//float scale=0;
 		while(time<third){
 			 time += Time.fixedDeltaTime;
 			 SetValues(time/third);

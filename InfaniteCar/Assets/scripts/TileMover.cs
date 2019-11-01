@@ -14,10 +14,10 @@ public class TileMover : MonoBehaviour
 	//int segments = 6;
 	public float baseSpeed = .5f;
     float InitialBaseSpeed = .3f;
-	float playerSpeed = 0;
+	//float playerSpeed = 0;
 	//float offset = 0;
-	float maxSpeed = 1f;
-	float width=15;
+	//float maxSpeed = 1f;
+	//float width=15;
     float sideForce = 0;
     float frontForce = 0;
     public PickupsManager pickups;
@@ -31,7 +31,7 @@ public class TileMover : MonoBehaviour
 
 
 
-    float CarDataSpeed =0;
+   // float CarDataSpeed =0;
    // float CarDataAccel =0;
 
 

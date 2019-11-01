@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public bool DebugNoMovement = false;
     public CameraController camera;
 
+    public bool extraDamage;
+
 
     PlayerInput input;
 
@@ -130,6 +132,9 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int amount){
         //camera.CameraShake(.2f,50);
         //PostProcessingEffectsManager.instance.Flash();
+        if (extraDamage)
+            amount *= 2;
+
         if (!pickups.usingShield)
         this.GetComponent<CarStats>().TakeDamage(amount);
 

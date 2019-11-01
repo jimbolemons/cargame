@@ -37,14 +37,34 @@ public class PostProcessingEffectsManager : MonoBehaviour
         for (int i = 0; i < pushVals.Length; i++)
         {
             if (pushVals[i] > 0)
-                pushVals[i] *= .95f;
+                pushVals[i] *= .98f;
             if (pushVals[i] < 0)
-                pushVals[i] *= .95f;
-            // if push vals is above a certin point change a bool to true to take more damage
+                pushVals[i] *= .98f;
+
+        }
+        for (int i = 0; i < pushVals.Length; i++)
+        {
+
+            if (pushVals[i] > .01f)
+            {
+                
+                //Debug.Log("i can take x2 damage right now");
+                PlayerController.instance.extraDamage = true;
+            }
+            else if (pushVals[i] < -.01f)
+            {
+                
+                //Debug.Log("i can take x2 damage right now");
+                PlayerController.instance.extraDamage = true;
+            }
+            else {
+                PlayerController.instance.extraDamage = false;
+            }
+            
         }
 
-        
-        mat.SetFloat("_GreenOffsetX", pushVals[0]);
+
+            mat.SetFloat("_GreenOffsetX", pushVals[0]);
         mat.SetFloat("_GreenOffsetY", pushVals[1]);
         mat.SetFloat("_BlueOffsetX", pushVals[2]);
         mat.SetFloat("_BlueOffsetY", pushVals[3]);

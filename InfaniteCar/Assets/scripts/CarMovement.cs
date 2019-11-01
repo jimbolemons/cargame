@@ -6,8 +6,8 @@ public class CarMovement : MonoBehaviour
 {
     public static CarMovement instance;
 	PlayerInput input;
-	float movement = .25f;
-	float width = 15;
+	//float movement = .25f;
+	//float width = 15;
 
     //float rotateSpeed = .1f;
     float rotateSpeedR= .1f;
@@ -17,7 +17,7 @@ public class CarMovement : MonoBehaviour
 
     float baseRotationSpeed = .1f;
 
-    float IncreaseScale = 2.5f;
+    //float IncreaseScale = 2.5f;
     // //Tilting
     // float rotation = 180;
     // float maxAngle = 20;

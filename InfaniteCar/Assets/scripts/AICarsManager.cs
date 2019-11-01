@@ -15,7 +15,7 @@ public class AICarsManager : MonoBehaviour
 
 	bool OnComing = false;
 	float LastSpawnTime =0;
-    float LastPoliceTime =0;
+   // float LastPoliceTime =0;
     public static bool policeSpawned = false;
     AIDriver police;
 	GameManager GM;

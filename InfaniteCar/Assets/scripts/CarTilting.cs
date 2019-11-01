@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarTilting : MonoBehaviour
 {
 	PlayerInput input;
-	float rotataion = 180;
+	//float rotataion = 180;
     float maxAngle = 35;
     float turnAngle = 0;
     float turn2 = 0;

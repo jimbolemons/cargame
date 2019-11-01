@@ -8,9 +8,9 @@ public class BulletManager : MonoBehaviour
     PlayerInput input;
     public List<bulletController> bullets = new List<bulletController>();
     List<bulletController> bulletsToRemove = new List<bulletController>();   
-     float currentSpeed = .01f;
+    // float currentSpeed = .01f;
     public Transform barrel;
-     float thrust = 500;
+    // float thrust = 500;
     //public float time = 1;
     // public int numberOfBullets = 10;
 

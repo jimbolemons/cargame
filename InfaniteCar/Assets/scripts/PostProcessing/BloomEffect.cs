@@ -7,7 +7,7 @@ public class BloomEffect : PostProcessingEffect
 {
 	Bloom effect;
 	Color idleColor;
-	float initIntensity = 0;
+	//float initIntensity = 0;
 
 	public override void Init(PostProcessingEffectScriptableObject _script, bool doDestroy){
 		base.Init(_script,doDestroy);

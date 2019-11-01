@@ -13,7 +13,7 @@ public class DeathPanelManager : MonoBehaviour
     // 	GM = GameManager.instance;
     //     EventManager.OnPlayerDied += OnPlayerDied;
     // }
-    bool active = false;
+   // bool active = false;
     private void Start()
     {
         EventManager.OnPlayerDied += OnPlayerDied;
