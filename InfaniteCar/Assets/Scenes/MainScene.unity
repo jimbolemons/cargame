@@ -6048,7 +6048,7 @@ MonoBehaviour:
   turnAngle: 0
   CarMeshContainer: {fileID: 2023033186}
   pickups: {fileID: 1136172347}
-  DebugNoMovement: 0
+  DebugNoMovement: 1
   camera: {fileID: 48032076}
   extraDamage: 0
 --- !u!114 &1136172344
@@ -6063,12 +6063,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050a34a4f8de9d44a94f7afc0e6afff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketPrefab: {fileID: 8783300789691982268, guid: 6003cfa45e96a554092affe4b75ac23a,
+  rocketPrefab: {fileID: 3054292085879425571, guid: 0b1d5ece6444e5246a518503ea4e827e,
     type: 3}
   currentSpeed: 0.01
   barrel: {fileID: 754111681}
   thrust: 50
-  NumOfRockets: 5
+  NumOfRockets: 1
   InRange: []
   OutOfRange: []
 --- !u!4 &1136172345
