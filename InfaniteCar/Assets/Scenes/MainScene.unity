@@ -6050,6 +6050,7 @@ MonoBehaviour:
   pickups: {fileID: 1136172347}
   DebugNoMovement: 0
   camera: {fileID: 48032076}
+  extraDamage: 0
 --- !u!114 &1136172344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6062,12 +6063,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050a34a4f8de9d44a94f7afc0e6afff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketPrefab: {fileID: 3054292085879425571, guid: 0b1d5ece6444e5246a518503ea4e827e,
+  rocketPrefab: {fileID: 8783300789691982268, guid: 6003cfa45e96a554092affe4b75ac23a,
     type: 3}
   currentSpeed: 0.01
   barrel: {fileID: 754111681}
   thrust: 50
-  NumOfRockets: 20
+  NumOfRockets: 5
   InRange: []
   OutOfRange: []
 --- !u!4 &1136172345
@@ -6115,8 +6116,8 @@ MonoBehaviour:
   RearSpawnPoint: {fileID: 1827258883}
   FrontSpawnPoint: {fileID: 754111681}
   hasOil: 0
-  hasRockets: 0
-  hasBomb: 1
+  hasRockets: 1
+  hasBomb: 0
   hasSpeed: 0
   hasShield: 0
   usingSpeed: 0
