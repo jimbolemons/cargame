@@ -17,6 +17,7 @@ public class AICarsManager : MonoBehaviour
 	float LastSpawnTime =0;
    // float LastPoliceTime =0;
     public static bool policeSpawned = false;
+    public bool isPoliceCar;
     AIDriver police;
 	GameManager GM;
     // Start is called before the first frame update
@@ -92,10 +93,24 @@ public class AICarsManager : MonoBehaviour
         int i = Random.Range(0,CarPre.Count);
         othervehicle = CarPre[i];
 
-    	AIDriver en = (AIDriver)Instantiate(othervehicle, Vector3.one*-50f, Quaternion.identity).GetComponent<AIDriver>();   	
+        if (othervehicle.name == "police cruiser")
+        {
+            isPoliceCar = true;
+            // othervehicle is a police cruser
+            // do somthing with that infromation
+        }
+        else
+        {
+            isPoliceCar = false;
+        }
+        Debug.Log("is this a police Cruser " + isPoliceCar);
+
+        AIDriver en = (AIDriver)Instantiate(othervehicle, Vector3.one*-50f, Quaternion.identity).GetComponent<AIDriver>();   	
     	en.gameObject.transform.localScale = Vector3.one *.75f;
     	Enemies.Add(en);
         en.Init(OnComing);
+        if (isPoliceCar)
+            en.isPoliceCar2 = true;
         OnComing = !OnComing;
     }
      void SpawnPolice(){
@@ -130,4 +145,5 @@ public class AICarsManager : MonoBehaviour
         EnemiesToRemove.Add(driver);
 //        Debug.Log(driver);
     }
+    
 }

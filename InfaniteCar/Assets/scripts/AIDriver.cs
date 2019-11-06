@@ -38,6 +38,8 @@ public class AIDriver : MonoBehaviour
     private Vector3 _direction;
     float rand;
 
+    public bool isPoliceCar2 = false;
+
 
     PlayerController pc;
     GameManager GM;
@@ -47,6 +49,11 @@ public class AIDriver : MonoBehaviour
     	pc = PlayerController.instance;
         // AI= AICarsManager.inst
         rand = Random.Range(.1f, -.1f);
+     //   if (this.name == "police cruiser")
+      //  {
+       //     isPoliceCar = true;
+       // }
+       // Debug.Log("is this a police Cruser " + isPoliceCar);
     }
     public void Init(bool _onComing){
     	tileMover = TileMover.instance; 
@@ -328,6 +335,12 @@ public class AIDriver : MonoBehaviour
                 if (nextTile == null)
                 {
                     RemoveDriver("End of way 4");
+                    // if is police crusier spawn enermy 
+                    if (isPoliceCar2)
+                    {
+                        AICarsManager.policeSpawned = false;
+                        Debug.Log("Spawning chaser");
+                    }
                     return null;
                 }
                 else
@@ -405,7 +418,12 @@ public class AIDriver : MonoBehaviour
         isdead = true;
         GameManager.instance.AICars.RemoveDriver(this,info);
        
-        if (police) AICarsManager.policeSpawned = false;
+        if (police) IfDestroyedIsPoliceCar();
+    }
+    public void IfDestroyedIsPoliceCar() {
+
+        AICarsManager.policeSpawned = false;
+
     }
     void OnCollisionEnter(Collision col)
     {
