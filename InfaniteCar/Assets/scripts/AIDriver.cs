@@ -270,6 +270,7 @@ public class AIDriver : MonoBehaviour
                 if (nextTile == null)
                 {
                     RemoveDriver("End of way 1");
+                    
                     return Vector3.zero;
                 }
                 else
@@ -289,6 +290,8 @@ public class AIDriver : MonoBehaviour
                 Tile nextTile = TileMover.instance.FindTileAfter(currentTile);
                 if (nextTile == null)
                 {
+                   
+                  
                     RemoveDriver("End of way 2");
                     return Vector3.zero;
                 }
@@ -334,13 +337,9 @@ public class AIDriver : MonoBehaviour
                 Tile nextTile = TileMover.instance.FindTileAfter(currentTile);
                 if (nextTile == null)
                 {
+                    
+                  
                     RemoveDriver("End of way 4");
-                    // if is police crusier spawn enermy 
-                    if (isPoliceCar2)
-                    {
-                        AICarsManager.policeSpawned = false;
-                        Debug.Log("Spawning chaser");
-                    }
                     return null;
                 }
                 else
@@ -371,6 +370,7 @@ public class AIDriver : MonoBehaviour
                 if (currentTile == null)
                 {
                     RemoveDriver("End of way 5");
+                    
                 }
                 else
                 {
@@ -396,6 +396,8 @@ public class AIDriver : MonoBehaviour
 
                 if (currentTile == null)
                 {
+                    
+                   
                     RemoveDriver("End of way 6");
                 }
                 else
@@ -489,6 +491,22 @@ public class AIDriver : MonoBehaviour
                     TileMover.instance.PlayerHitCar();
             }
             
+        }
+
+        if (col.gameObject.tag == "spawner")
+        {
+            if (isPoliceCar2)
+            {
+                if (!police)
+                {
+
+                    AICarsManager.policeSpawned = false;
+                    isdead = true;
+                    RemoveDriver("trigger with player");
+                }
+            }
+
+
         }
         if (col.gameObject.tag == "Bullet")
         {
