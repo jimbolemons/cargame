@@ -62,8 +62,8 @@ public class PickupsManager : MonoBehaviour
 
 		if(usingSpeed && Time.time-speedSpawnTime > speedDuration)
         	usingSpeed=false;
-		SpeedRenderer.enabled = usingSpeed;
-
+		//SpeedRenderer.enabled = usingSpeed;
+        randomOnOff.speedOn = usingSpeed;
 
 		if(Input.GetKeyDown(KeyCode.Q)){
 			UseCurrentPickup();
