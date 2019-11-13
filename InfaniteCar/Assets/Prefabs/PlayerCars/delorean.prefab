@@ -110,7 +110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 174726315152875782}
-  - component: {fileID: 8100955519796794683}
+  - component: {fileID: 5472171307116830566}
   m_Layer: 0
   m_Name: FrontRight
   m_TagString: Untagged
@@ -133,7 +133,7 @@ Transform:
   m_Father: {fileID: 7705609044000477352}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8100955519796794683
+--- !u!114 &5472171307116830566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6343364847550513896}
-  - component: {fileID: 8864495457935802256}
+  - component: {fileID: 7371133123317648459}
   m_Layer: 0
   m_Name: Front left
   m_TagString: Untagged
@@ -297,7 +297,7 @@ Transform:
   m_Father: {fileID: 7705609044000477352}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8864495457935802256
+--- !u!114 &7371133123317648459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
