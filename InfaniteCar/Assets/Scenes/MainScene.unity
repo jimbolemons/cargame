@@ -6210,7 +6210,7 @@ MonoBehaviour:
   hasOil: 0
   hasRockets: 0
   hasBomb: 0
-  hasSpeed: 1
+  hasSpeed: 0
   hasShield: 0
   usingSpeed: 0
   usingShield: 0
