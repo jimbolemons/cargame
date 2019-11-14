@@ -31,12 +31,14 @@ public class AIDriver : MonoBehaviour
     float oilTime = 2;
     bool oil = false;
     public Vector3 spinOutRotation;
+    float sideForce = 0;
 
     private float rotSpeed = 500f;
 
     private Quaternion _lookRotation;
     private Vector3 _direction;
     float rand;
+    public Rigidbody rb;
 
     public bool isPoliceCar2 = false;
 
@@ -49,6 +51,7 @@ public class AIDriver : MonoBehaviour
     	pc = PlayerController.instance;
         // AI= AICarsManager.inst
         rand = Random.Range(.1f, -.1f);
+        rb = GetComponent<Rigidbody>();
      //   if (this.name == "police cruiser")
       //  {
        //     isPoliceCar = true;
@@ -110,7 +113,9 @@ public class AIDriver : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(!GM.GameRunning()) return;
+        if (Mathf.Abs(sideForce) > 0) sideForce *= .9f;
+
+        if (!GM.GameRunning()) return;
     	if(currentTile != null && currentWaypoint !=null){
         	CheckWayPoint();
         	Movement();
@@ -124,6 +129,10 @@ public class AIDriver : MonoBehaviour
             RemoveDriver("<color=red> AI with no waypoint</color>");
            isdead =true;
     	}
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Bump(50);
+        }
     }
     void Movement(){
         if(police) PoliceMovement();
@@ -472,10 +481,19 @@ public class AIDriver : MonoBehaviour
         oil = true;
 
     }
+    public Vector3 GetSideForce()
+    {
+        return this.transform.right * sideForce;
+    }
     public void Bump(float f)
     {
+        Vector3 dir = Vector3.zero;
+        //this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, f, 0), 1);
+        //rb.AddForce(transform.right * f , ForceMode.Force);
+        this.transform.right += dir * tileMover.GetUnstoppableSpeed() * policespeedMod * 1000000;
 
-       // this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, f, 0), 1);
+        //this.transform.position = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, 0, f), 1);
+        // todo push in the direction
 
 
     }

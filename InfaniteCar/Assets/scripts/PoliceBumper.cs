@@ -11,6 +11,7 @@ public class PoliceBumper : MonoBehaviour
     public PoliceBumperside policeBumperside = PoliceBumperside.Front;
     public void OnTriggerEnter(Collider col)
     {
+        AIDriver AI = gameObject.GetComponentInParent(typeof(AIDriver)) as AIDriver;
         if (col.gameObject.tag != "Building") return;
 
 
@@ -23,13 +24,15 @@ public class PoliceBumper : MonoBehaviour
             case PoliceBumperside.Right:
                 //push the car to the left
                 Debug.Log("bump Right");
-               // this.gameObject.GetComponent<AIDriver>().Bump(10);
+                // this.gameObject.GetComponent<AIDriver>().Bump(10);
                 //this.GetComponent<AIDriver>().Bump(10);
+                AI.Bump(10);
                 break;
             case PoliceBumperside.Left:
                 //push the car to the right
                 Debug.Log("bump Left");
                 //this.GetComponent<AIDriver>().Bump(10);
+                AI.Bump(10);
                 break;
             case PoliceBumperside.Back:
                 Debug.Log("bump Back");

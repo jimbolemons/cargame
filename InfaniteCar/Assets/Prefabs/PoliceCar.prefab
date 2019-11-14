@@ -580,6 +580,7 @@ MonoBehaviour:
   wayPointdis: 0
   percentOfdis: 0
   spinOutRotation: {x: 0, y: 1000, z: 0}
+  rb: {fileID: 0}
   isPoliceCar2: 0
 --- !u!54 &-4067134863323505433
 Rigidbody:
@@ -764,6 +765,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9
       objectReference: {fileID: 0}
+    - target: {fileID: -8147259204150699187, guid: 4014d92fccb9bb2489f319420571d16c,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 4092594289870682658}
     - target: {fileID: -5730046510109368766, guid: 4014d92fccb9bb2489f319420571d16c,
         type: 3}
       propertyPath: m_Enabled
@@ -776,6 +782,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4014d92fccb9bb2489f319420571d16c, type: 3}
+--- !u!54 &4092594289870682658 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: -140457682092636404, guid: 4014d92fccb9bb2489f319420571d16c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5100096409649839406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6717654616990669288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2017271653730460870, guid: 4014d92fccb9bb2489f319420571d16c,
