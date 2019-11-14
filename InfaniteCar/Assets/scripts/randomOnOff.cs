@@ -53,8 +53,8 @@ public class randomOnOff : MonoBehaviour
                     timeOnNow = true;
                 }
             }
-            Debug.Log(timeOnNow);
-            Debug.Log(timeOff);
+           // Debug.Log(timeOnNow);
+            //Debug.Log(timeOff);
 
         }
             if (Input.GetKey(KeyCode.X))

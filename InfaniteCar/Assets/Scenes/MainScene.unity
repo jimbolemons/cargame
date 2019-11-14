@@ -6211,7 +6211,7 @@ MonoBehaviour:
   hasRockets: 0
   hasBomb: 0
   hasSpeed: 0
-  hasShield: 0
+  hasShield: 1
   usingSpeed: 0
   usingShield: 0
   oilPrefab: {fileID: 203808304566106179, guid: 67f85998aef5500488e19da079c788ca,
@@ -8466,12 +8466,12 @@ PrefabInstance:
     - target: {fileID: 7563820260259760531, guid: 020965223ca3a8d46b7dfc68c568eee8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.012
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 7563820260259760531, guid: 020965223ca3a8d46b7dfc68c568eee8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.548
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 7563820260259760531, guid: 020965223ca3a8d46b7dfc68c568eee8,
         type: 3}
@@ -8516,7 +8516,7 @@ PrefabInstance:
     - target: {fileID: 7563820260259760531, guid: 020965223ca3a8d46b7dfc68c568eee8,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7563820260259760531, guid: 020965223ca3a8d46b7dfc68c568eee8,
         type: 3}

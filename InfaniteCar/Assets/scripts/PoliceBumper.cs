@@ -23,7 +23,8 @@ public class PoliceBumper : MonoBehaviour
             case PoliceBumperside.Right:
                 //push the car to the left
                 Debug.Log("bump Right");
-               // this.GetComponent<AIDriver>().Bump(10);
+               // this.gameObject.GetComponent<AIDriver>().Bump(10);
+                //this.GetComponent<AIDriver>().Bump(10);
                 break;
             case PoliceBumperside.Left:
                 //push the car to the right

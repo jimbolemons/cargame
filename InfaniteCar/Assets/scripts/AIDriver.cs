@@ -147,9 +147,9 @@ public class AIDriver : MonoBehaviour
             if (!oil)
                
             if (rand > 0)
-               target = pc.transform.position + pc.transform.right * laneOffset;
+               target = pc.transform.position + pc.transform.right * laneOffset / 2;
             else
-                target = pc.transform.position + pc.transform.right * -laneOffset;
+                target = pc.transform.position + pc.transform.right * -laneOffset / 2;
 
             this.transform.LookAt(target);
 
