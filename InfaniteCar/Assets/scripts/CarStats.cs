@@ -90,7 +90,7 @@ public class CarStats : MonoBehaviour
         camera.CameraShake(.2f, 50);
         PostProcessingEffectsManager.instance.Flash();
         if (DebugInvinsable) return;
-        Debug.Log("Player took " + amount  + " damage");
+        Debug.Log("<color=red>Player took </color>" + amount  + "<color=red> damage</color>");
         
         DamageAmount += amount;
             if (DamageAmount >= 100) PlayerDiedFromDamage();

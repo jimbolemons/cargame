@@ -70,7 +70,7 @@ public class PickupsManager : MonoBehaviour
 		}
     }
    public  void UseCurrentPickup(){
-    	Debug.Log("Attempt use pickup");
+    	//Debug.Log("Attempt use pickup");
     	if(hasRockets)
            SpawnRocketsButton();
         else if(hasOil)

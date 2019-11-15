@@ -37,7 +37,7 @@ public class CarBumper : MonoBehaviour
                 
                 TileMover.instance.BumpFront(.5f);
                 TileMover.instance.PlayerHitCar();
-                Debug.Log("bump");
+                //Debug.Log("bump");
 
                 break;
 

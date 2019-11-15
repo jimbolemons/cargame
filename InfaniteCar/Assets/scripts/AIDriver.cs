@@ -362,7 +362,7 @@ public class AIDriver : MonoBehaviour
     }
 
     void MoveToNextWay(){
-    	Debug.Log("Find next waypoint");
+    	//Debug.Log("Find next waypoint");
         if (!onComing)
         {
             if (wayIndex + 1 < currentTile.waypoints.Count)
@@ -423,8 +423,8 @@ public class AIDriver : MonoBehaviour
     }
     public void RemoveDriver(string info){
         if (police)
-        Debug.Log("police" + info);
-        Debug.Log(info);
+        //Debug.Log("police" + info);
+       // Debug.Log(info);
 
         isdead = true;
         GameManager.instance.AICars.RemoveDriver(this,info);

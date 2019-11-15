@@ -26,7 +26,7 @@ public class EventManager : MonoBehaviour
     	instance = this;
     }
     public void PlayerDied(){
-        Debug.Log("Player died");
+        Debug.Log("<color=red>Player died</color>");
         if(OnPlayerDied != null)
             OnPlayerDied();
         /*

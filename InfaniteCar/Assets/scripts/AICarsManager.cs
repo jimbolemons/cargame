@@ -103,7 +103,7 @@ public class AICarsManager : MonoBehaviour
         {
             isPoliceCar = false;
         }
-        Debug.Log("is this a police Cruser " + isPoliceCar);
+        //Debug.Log("is this a police Cruser " + isPoliceCar);
 
         AIDriver en = (AIDriver)Instantiate(othervehicle, Vector3.one*-50f, Quaternion.identity).GetComponent<AIDriver>();   	
     	en.gameObject.transform.localScale = Vector3.one *.75f;
@@ -114,7 +114,7 @@ public class AICarsManager : MonoBehaviour
         OnComing = !OnComing;
     }
      void SpawnPolice(){
-        Debug.Log("Police spawned");
+       // Debug.Log("Police spawned");
         police = (AIDriver)Instantiate(PoliceVehicle, Vector3.one * -50f, Quaternion.identity).GetComponent<AIDriver>();
         police.gameObject.transform.localScale = Vector3.one * .75f;
         Enemies.Add(police);
