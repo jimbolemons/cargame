@@ -20,6 +20,7 @@ public class AIDriver : MonoBehaviour
    // float speed = .3f;
     //float PoliceChaseSpeed= .4f;
     float laneOffset = 2.5f;
+    float laneOffset2 = 2.5f;
     bool police = false;
     float policespeedMod = 1f;
    // bool inPursuit = false;
@@ -129,9 +130,13 @@ public class AIDriver : MonoBehaviour
             RemoveDriver("<color=red> AI with no waypoint</color>");
            isdead =true;
     	}
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKey(KeyCode.L))
         {
-            Bump(50);
+            Bump(10);
+        }
+        else
+        {
+            NoBump();
         }
     }
     void Movement(){
@@ -156,9 +161,9 @@ public class AIDriver : MonoBehaviour
             if (!oil)
                
             if (rand > 0)
-               target = pc.transform.position + pc.transform.right * laneOffset / 2;
+               target = pc.transform.position + pc.transform.right * laneOffset2 / 2;
             else
-                target = pc.transform.position + pc.transform.right * -laneOffset / 2;
+                target = pc.transform.position + pc.transform.right * -laneOffset2 / 2;
 
             this.transform.LookAt(target);
 
@@ -487,15 +492,28 @@ public class AIDriver : MonoBehaviour
     }
     public void Bump(float f)
     {
-        Vector3 dir = Vector3.zero;
+        Vector3 dir = new Vector3(0f,5f,0f);
+        Vector3 target = Vector3.zero;
+
+        //this.transform.LookAt(target);
+
+        // dir = target - this.transform.position;
+        // dir = dir.normalized;
         //this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, f, 0), 1);
         //rb.AddForce(transform.right * f , ForceMode.Force);
-        this.transform.right += dir * tileMover.GetUnstoppableSpeed() * policespeedMod * 1000000;
+        laneOffset2 = -f;
 
         //this.transform.position = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, 0, f), 1);
         // todo push in the direction
 
 
+    }
+    public void NoBump()
+    {
+       
+        laneOffset2 = 2.5f;
+
+        
     }
     void OnTriggerEnter(Collider col){
         if (col.gameObject.tag == "Player") 

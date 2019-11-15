@@ -60,7 +60,7 @@ public class bulletController : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             markedForDeath = true;
-            Debug.Log("Bullet hit enemy" + col.gameObject.name);
+           // Debug.Log("Bullet hit enemy" + col.gameObject.name);
             //mark the enemy as dead
         }
         //if the bullet hits somthing that is not an enemy it will do this
