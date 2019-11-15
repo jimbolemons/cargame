@@ -21,6 +21,8 @@ public class AIDriver : MonoBehaviour
     //float PoliceChaseSpeed= .4f;
     float laneOffset = 2.5f;
     float laneOffset2 = 2.5f;
+    bool isBump = false;
+    float bumpTime = 0f;
     bool police = false;
     float policespeedMod = 1f;
    // bool inPursuit = false;
@@ -132,12 +134,10 @@ public class AIDriver : MonoBehaviour
     	}
         if (Input.GetKey(KeyCode.L))
         {
-            Bump(10);
+            IsBump();
         }
-        else
-        {
-            NoBump();
-        }
+
+        Bump();
     }
     void Movement(){
         if(police) PoliceMovement();
@@ -490,30 +490,34 @@ public class AIDriver : MonoBehaviour
     {
         return this.transform.right * sideForce;
     }
-    public void Bump(float f)
+    public void IsBump()
     {
-        Vector3 dir = new Vector3(0f,5f,0f);
-        Vector3 target = Vector3.zero;
+        isBump = true;
 
-        //this.transform.LookAt(target);
+    }
+    public void Bump()
+    {
+        if (isBump)
+        {
+            if (bumpTime <= 1)
+            {
+                //laneOffset2 -= Time.deltaTime;
+                bumpTime += Time.deltaTime;
+                laneOffset2 = -2.5f;
+            }
+            else
+            {
+                NoBump();
+            }
 
-        // dir = target - this.transform.position;
-        // dir = dir.normalized;
-        //this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, f, 0), 1);
-        //rb.AddForce(transform.right * f , ForceMode.Force);
-        laneOffset2 = -f;
-
-        //this.transform.position = Vector3.Lerp(this.transform.eulerAngles, this.transform.eulerAngles - new Vector3(0, 0, f), 1);
-        // todo push in the direction
-
-
+        }
+        //laneOffset2 = -10f;
     }
     public void NoBump()
     {
-       
+        isBump = false;
         laneOffset2 = 2.5f;
-
-        
+        bumpTime = 0;
     }
     void OnTriggerEnter(Collider col){
         if (col.gameObject.tag == "Player") 
