@@ -6208,10 +6208,10 @@ MonoBehaviour:
   RearSpawnPoint: {fileID: 1827258883}
   FrontSpawnPoint: {fileID: 754111681}
   hasOil: 0
-  hasRockets: 0
+  hasRockets: 1
   hasBomb: 0
   hasSpeed: 0
-  hasShield: 1
+  hasShield: 0
   usingSpeed: 0
   usingShield: 0
   oilPrefab: {fileID: 203808304566106179, guid: 67f85998aef5500488e19da079c788ca,

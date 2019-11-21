@@ -123,13 +123,13 @@ public class RocketController : MonoBehaviour
     {
         Debug.Log("boom" + col.gameObject.name);
         // if the bullet hits an enemy it will do this
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Building")
         {
             markedForExplode = true;
             RM.OutOfRange.Add(col.gameObject.GetComponent<AIDriver>());
         }
         //if the bullet hits somthing that is not an enemy it will do this
-        if (col.gameObject.tag != "Enemy")
+        if (col.gameObject.tag != "Building")
         {
             //markedForExplode = true;
             //Debug.Log(col.gameObject.tag);

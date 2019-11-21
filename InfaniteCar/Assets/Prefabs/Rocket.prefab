@@ -19,7 +19,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 1
-  radiusSpeed: 1.27
+  radiusSpeed: 500
   rotationSpeed: 164.27
 --- !u!1 &488519447589924225
 GameObject:
@@ -23813,10 +23813,10 @@ MonoBehaviour:
   markedForExplode: 0
   boostTime: 0
   thrust: 50
-  boost: 1000
+  boost: 500
   forwardThrust: 0
   upThrust: 50
-  turnSpeed: 5
+  turnSpeed: 1000000
 --- !u!1 &4150518316067233268
 GameObject:
   m_ObjectHideFlags: 0
@@ -28588,7 +28588,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 0.7
-  radiusSpeed: 0.72
+  radiusSpeed: 500
   rotationSpeed: 235.12
 --- !u!114 &5832766217360293993
 MonoBehaviour:
@@ -28609,7 +28609,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 3.4
-  radiusSpeed: 1.57
+  radiusSpeed: 500
   rotationSpeed: 335.5
 --- !u!114 &6194590614365354390
 MonoBehaviour:
@@ -28630,7 +28630,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 2
-  radiusSpeed: 0.43
+  radiusSpeed: 500
   rotationSpeed: 247.5
 --- !u!114 &2464760375098964364
 MonoBehaviour:
@@ -28665,7 +28665,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 0.35
-  radiusSpeed: 0.55
+  radiusSpeed: 500
   rotationSpeed: 176
 --- !u!1 &7677014106431092301
 GameObject:
@@ -33438,7 +33438,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 0.49
-  radiusSpeed: 1.26
+  radiusSpeed: 500
   rotationSpeed: 155.7
 --- !u!1001 &113222328421562458
 PrefabInstance:
@@ -33644,12 +33644,12 @@ PrefabInstance:
     - target: {fileID: 3233609181513193152, guid: 068facbeb3c45504e8b18458bba35ef7,
         type: 3}
       propertyPath: m_Size.x
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3233609181513193152, guid: 068facbeb3c45504e8b18458bba35ef7,
         type: 3}
       propertyPath: m_Size.y
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3233609181513193152, guid: 068facbeb3c45504e8b18458bba35ef7,
         type: 3}

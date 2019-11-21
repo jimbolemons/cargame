@@ -25,10 +25,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
-    - _BlueOffsetX: 0
-    - _BlueOffsetY: 0
-    - _GreenOffsetX: 0
-    - _GreenOffsetY: 0
+    - _BlueOffsetX: 0.0021275908
+    - _BlueOffsetY: 0.00851865
+    - _GreenOffsetX: -0.005846358
+    - _GreenOffsetY: 0.017972147
     - _RedOffsetX: 0
     - _RedOffsetY: 0
     m_Colors: []
