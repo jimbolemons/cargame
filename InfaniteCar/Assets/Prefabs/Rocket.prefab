@@ -19,7 +19,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 1
-  radiusSpeed: 500
+  radiusSpeed: 25
   rotationSpeed: 164.27
 --- !u!1 &488519447589924225
 GameObject:
@@ -23809,7 +23809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTimer: 5
   rocketBounceTimer: 0
-  enemyTimer: 0.52
+  enemyTimer: 0
   markedForExplode: 0
   boostTime: 0
   thrust: 50
@@ -28588,7 +28588,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 0.7
-  radiusSpeed: 500
+  radiusSpeed: 25
   rotationSpeed: 235.12
 --- !u!114 &5832766217360293993
 MonoBehaviour:
@@ -28609,7 +28609,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 3.4
-  radiusSpeed: 500
+  radiusSpeed: 25
   rotationSpeed: 335.5
 --- !u!114 &6194590614365354390
 MonoBehaviour:
@@ -28630,7 +28630,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 2
-  radiusSpeed: 500
+  radiusSpeed: 25
   rotationSpeed: 247.5
 --- !u!114 &2464760375098964364
 MonoBehaviour:
@@ -28665,7 +28665,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 0.35
-  radiusSpeed: 500
+  radiusSpeed: 25
   rotationSpeed: 176
 --- !u!1 &7677014106431092301
 GameObject:
@@ -33438,7 +33438,7 @@ MonoBehaviour:
   desiredPosition: {x: 0, y: 0, z: 0}
   radius: 0.0001
   radius2: 0.49
-  radiusSpeed: 500
+  radiusSpeed: 25
   rotationSpeed: 155.7
 --- !u!1001 &113222328421562458
 PrefabInstance:

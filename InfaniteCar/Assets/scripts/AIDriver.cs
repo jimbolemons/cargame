@@ -550,11 +550,10 @@ public class AIDriver : MonoBehaviour
         }
         if (col.gameObject.tag == "Bullet")
         {
-            if (!police)
-            { 
+            
                 isdead = true;            
                 RemoveDriver("trigger with bullet");
-            }
+            
            // Debug.Log("boom" + col.gameObject.name);
             //mark the enemy as dead
         }
