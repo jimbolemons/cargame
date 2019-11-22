@@ -6138,7 +6138,7 @@ MonoBehaviour:
   turnAngle: 0
   CarMeshContainer: {fileID: 2023033186}
   pickups: {fileID: 1136172347}
-  DebugNoMovement: 0
+  DebugNoMovement: 1
   camera: {fileID: 48032076}
   extraDamage: 0
 --- !u!114 &1136172344

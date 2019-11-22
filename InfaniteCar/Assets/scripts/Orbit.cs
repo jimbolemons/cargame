@@ -25,14 +25,14 @@ public class Orbit : MonoBehaviour
         { transform.position = (transform.position - center.position).normalized * -radius + center.position; }
         if (!orbitSwitch)
         { transform.position = (transform.position - center.position).normalized * radius + center.position; }
-
+       
         }
 
     void Update()
     {
-        
-       
-            transform.RotateAround(center.position, axis, rotationSpeed * Time.deltaTime);
+        //axis = Vector3.right;
+
+        transform.RotateAround(center.position, axis, rotationSpeed * Time.deltaTime);
             desiredPosition = (transform.position - center.position).normalized * radius2 + center.position;
             transform.position = Vector3.MoveTowards(transform.position, desiredPosition, Time.deltaTime * radiusSpeed);
         
